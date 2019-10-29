@@ -1,0 +1,92 @@
+﻿body{
+    font-family:Courier New, Courier, monospace;
+}
+table{
+    font-family:Courier New, Courier, monospace;
+    width:100%;
+    font-size:10px;
+}
+th{
+    height:10px;
+    font-weight:700;
+    border-bottom-width:1px;
+}
+td{
+    height:14px;
+    font-family:Courier New, Courier, monospace;
+}
+.centro {
+    text-align:center;
+}
+.dvalor{
+    text-align:right;
+    width:12.5%;
+}
+.dfecha{
+    width:10%;
+}
+.ddoc{
+    width:11%;
+}
+.dcuenta{
+    width:11%;
+}
+/*.dobserv{
+    width:40%;
+    height:25px;
+}*/
+
+.dobserv{
+    width:50%;
+    height:20px;
+}
+
+.medcolpe{        
+    width:5%;
+}
+.medcol{        
+    width:20%;
+    height:25px;
+}
+.medFec{        
+    width:20%;
+    height:25px;
+}
+
+.medVec{        
+    width:22%;
+    height:25px;
+}
+
+.medcolh{        
+    width:15%;
+    height:25px;
+}
+
+.medVal{        
+    width:28%;
+    height:25px;
+}
+.medDIa{
+    width:5%;
+    height:25px;
+}
+
+
+.expadin{
+    height:0px;
+}
+.negrita{
+    font-weight:700;
+}
+
+.Derecha  {
+   right:10%;
+}
+
+.total {
+    border-top-width:1px;
+}
+.font{
+    font-size:medium;
+}

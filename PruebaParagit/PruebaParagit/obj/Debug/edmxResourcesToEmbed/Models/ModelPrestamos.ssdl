@@ -1,0 +1,2487 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TransaccionesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AUX_MaestroAuxiliares">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="AUX_MovimientosAuxiliares">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CuentaCont" />
+      <PropertyRef Name="CodClteApls" />
+      <PropertyRef Name="FecMovAux" />
+      <PropertyRef Name="TipoDocAux" />
+      <PropertyRef Name="NumDocAux" />
+      <PropertyRef Name="MovAux" />
+      <PropertyRef Name="FecMovAplicAux" />
+      <PropertyRef Name="TipoDocMovAplicAux" />
+      <PropertyRef Name="NumDocMovAplicAux" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="CodClteApls" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="FecMovAux" Type="date" Nullable="false" />
+    <Property Name="TipoDocAux" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumDocAux" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="MovAux" Type="tinyint" Nullable="false" />
+    <Property Name="FecMovAplicAux" Type="date" Nullable="false" />
+    <Property Name="TipoDocMovAplicAux" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumDocMovAplicAux" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="ValorDebMovAux" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ValorCreMovAux" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="DetalleMovAux" Type="nvarchar" MaxLength="200" />
+    <Property Name="AplicPagosPrest" Type="nvarchar" MaxLength="8" />
+    <Property Name="Proceso" Type="bit" Nullable="false" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CNT_MaestroCuenta">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CuentaCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="28" Nullable="false" />
+    <Property Name="CuentaControl" Type="nvarchar" MaxLength="28" />
+    <Property Name="DesCuentaCont" Type="nvarchar" MaxLength="80" />
+    <Property Name="FecAperCtaCont" Type="date" />
+    <Property Name="OrigenCuenta" Type="tinyint" />
+    <Property Name="AceptaMov" Type="tinyint" />
+    <Property Name="TieneAux" Type="nvarchar" MaxLength="3" />
+    <Property Name="Revaluar" Type="tinyint" />
+    <Property Name="BceCuentaCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorDebCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCreCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceEneCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceFebCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceMarCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceAbrCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceMayCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceJunCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceJulCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceAgoCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceSepCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceOctCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceNovCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceDicCont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Bce13Cont" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Processo" Type="bit" Nullable="false" />
+    <Property Name="FechaProcesso" Type="datetime" />
+    <Property Name="Analitico" Type="tinyint" Nullable="false" />
+    <Property Name="Revaluacion" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CNT_MaestroPresupuestoContabilidad">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Año" />
+      <PropertyRef Name="CuentaCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Año" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="28" Nullable="false" />
+    <Property Name="Pre_Enero" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Febrero" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Marzo" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Abril" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Mayo" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Junio" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Julio" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Agosto" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Septiembre" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Octubre" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Noviembre" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pre_Diciembre" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Proceso" Type="bit" Nullable="false" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CNT_MovimientosContabilidad">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CuentaCont" />
+      <PropertyRef Name="FechaDocCont" />
+      <PropertyRef Name="TipoDocCont" />
+      <PropertyRef Name="NumDocCont" />
+      <PropertyRef Name="MovPartCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="FechaDocCont" Type="date" Nullable="false" />
+    <Property Name="TipoDocCont" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumDocCont" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MovPartCont" Type="tinyint" Nullable="false" />
+    <Property Name="ValorDebPartCont" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ValorCrePartCont" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ObservPartCont" Type="nvarchar" MaxLength="200" />
+    <Property Name="AplicPagosPrest" Type="nvarchar" MaxLength="10" />
+    <Property Name="Proceso" Type="bit" Nullable="false" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CNT_Parametros">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Fecha_ult_Mayor" Type="date" />
+    <Property Name="FechaUltCCont" Type="date" />
+  </EntityType>
+  <EntityType Name="CNT_ResumenDocumentos">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="FechaDocCont" />
+      <PropertyRef Name="TipoDocCont" />
+      <PropertyRef Name="NumDocCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaDocCont" Type="date" Nullable="false" />
+    <Property Name="TipoDocCont" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumDocCont" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ConceptoDocCont" Type="nvarchar" MaxLength="200" />
+    <Property Name="Proceso" Type="bit" Nullable="false" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.Copia_PTC_ProgramasPorUsuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Copia_PTC_ProgramasPorUsuarios">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="IdentificacionUsr" />
+      <PropertyRef Name="CodigoApls" />
+      <PropertyRef Name="NombreFrm" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdentificacionUsr" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NombreFrm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TodoTipoAccesUsrpgms" Type="tinyint" />
+    <Property Name="EscribirUsrpgms" Type="tinyint" />
+    <Property Name="LeerUsrpgms" Type="tinyint" />
+    <Property Name="ModificarUsrpgms" Type="tinyint" />
+    <Property Name="EliminarUsrpgms" Type="tinyint" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.copiaMM' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="copiaMM">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="NombreFrm" />
+      <PropertyRef Name="CodigoApls" />
+      <PropertyRef Name="OrdenDelFrmEnApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreFrm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CodigoTipoPgm" Type="nvarchar" MaxLength="2" />
+    <Property Name="OrdenDelFrmEnApls" Type="smallint" Nullable="false" />
+    <Property Name="DescripcionFrm" Type="nvarchar" MaxLength="60" />
+    <Property Name="DescripcionCompletaFrm" Type="nvarchar" MaxLength="120" />
+    <Property Name="Grupo" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GRL_MaestroClientes">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodClteApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodClteApls" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="NomClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApeClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionClteApls" Type="nvarchar" MaxLength="150" />
+    <Property Name="SectorClteApls" Type="nvarchar" MaxLength="40" />
+    <Property Name="TipoClteApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="NacionalidadClteApls" Type="nvarchar" MaxLength="50" />
+    <Property Name="FecAperClteApls" Type="date" />
+    <Property Name="TipoID" Type="nvarchar" MaxLength="1" />
+    <Property Name="CedRncClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaNac1Apls" Type="date" />
+    <Property Name="EstadoCivilClteApls" Type="nvarchar" MaxLength="1" />
+    <Property Name="CiudadClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="PaisClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="ProvinciaClteApls" Type="nvarchar" MaxLength="4" />
+    <Property Name="Ocupacion" Type="nvarchar" MaxLength="60" />
+    <Property Name="Sexo" Type="nvarchar" MaxLength="1" />
+    <Property Name="RegistroMercantil" Type="nvarchar" MaxLength="20" />
+    <Property Name="TelefonosClteApls" Type="nvarchar" MaxLength="30" />
+    <Property Name="TelefonoOficinaClteApls" Type="nvarchar" MaxLength="30" />
+    <Property Name="FaxClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="CelularClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="BeeperClteApls" Type="varbinary" MaxLength="20" />
+    <Property Name="E_mailClteApls" Type="nvarchar" MaxLength="80" />
+    <Property Name="E_mail2ClteApls" Type="nvarchar" MaxLength="80" />
+    <Property Name="WebSiteClteApls" Type="nvarchar" MaxLength="80" />
+    <Property Name="Estatus" Type="tinyint" />
+    <Property Name="Comentario" Type="nvarchar" MaxLength="200" />
+    <Property Name="Comision" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="NombreConyuge" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApellidoConyuge" Type="nvarchar" MaxLength="60" />
+    <Property Name="CedulaConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="TelefonoConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="CelularConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="BeeperConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="DireccionConyuge" Type="nvarchar" MaxLength="150" />
+    <Property Name="Aniversario" Type="date" />
+    <Property Name="EmpresaL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CedulaL" Type="nvarchar" MaxLength="20" />
+    <Property Name="DireccionL" Type="nvarchar" MaxLength="150" />
+    <Property Name="NacionalidadL" Type="nvarchar" MaxLength="30" />
+    <Property Name="SectorL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CiudadL" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelefonoL" Type="nvarchar" MaxLength="20" />
+    <Property Name="FaxL" Type="nvarchar" MaxLength="20" />
+    <Property Name="MailL" Type="nvarchar" MaxLength="60" />
+    <Property Name="CargoL" Type="nvarchar" MaxLength="50" />
+    <Property Name="JefeL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SueldoL" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="FechaIngreso" Type="date" />
+    <Property Name="PrestacionesAcum" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="SinRegalia" Type="tinyint" />
+    <Property Name="Prestaciones76" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Prestaciones40" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo1" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo1" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo2" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo2" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo3" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo3" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo4" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo4" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CuentaBanco1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuentaBanco2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuentaBanco3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco3" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescripcionFirma" Type="nvarchar" MaxLength="250" />
+    <Property Name="ActividadS" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoEmpresaS" Type="nvarchar" MaxLength="2" />
+    <Property Name="CuentaS" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoDeudorS" Type="nvarchar" MaxLength="3" />
+    <Property Name="AutorizadoC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CedulaAutoC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ObservacionesC" Type="nvarchar" MaxLength="350" />
+    <Property Name="Limite" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CodigoVendApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="CodigoZonaApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="Contacto" Type="nvarchar" MaxLength="40" />
+    <Property Name="ClasificacionCliente" Type="nvarchar" MaxLength="4" />
+    <Property Name="ClienteGeneral" Type="tinyint" />
+    <Property Name="ClienteFactoring" Type="tinyint" />
+    <Property Name="ContactoEmpresa" Type="tinyint" />
+    <Property Name="Deudor" Type="tinyint" />
+    <Property Name="ProveedorCliente" Type="tinyint" />
+    <Property Name="RepresentanteLegal" Type="tinyint" />
+    <Property Name="TasaInteres" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMora" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReserva" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaInteresD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="DiasReservaPesos" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasReservaDolares" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="TasaInteresConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaInteresDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="DiasReservaPesosConf" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasReservaDolaresConf" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasMinInt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasCalcIntCxc" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NoCuentaP" Type="nvarchar" MaxLength="50" />
+    <Property Name="BancoBeneficiarioP" Type="nvarchar" MaxLength="50" />
+    <Property Name="DireccionBancoP" Type="nvarchar" MaxLength="150" />
+    <Property Name="TipoCuentaP" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftBancoP" Type="nvarchar" MaxLength="50" />
+    <Property Name="BeneficiarioD" Type="nvarchar" MaxLength="100" />
+    <Property Name="DireccionBeneficiarioD" Type="nvarchar" MaxLength="150" />
+    <Property Name="BancoBenefPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DireccionBancoPrimerD" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoCuentaPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="ABAPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="BancoIntermediarioD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DireccionBancoIntermD" Type="nvarchar" MaxLength="150" />
+    <Property Name="NoCuentaIntermD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftIntermD" Type="nvarchar" MaxLength="50" />
+    <Property Name="NCfEmitidoA" Type="nvarchar" MaxLength="1" />
+    <Property Name="DevolucionInteres" Type="nvarchar" MaxLength="1" />
+    <Property Name="FactoringOConfirming" Type="nvarchar" MaxLength="1" />
+    <Property Name="TasaIntDespVencFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="LegalizacionFactPesos" Type="tinyint" />
+    <Property Name="NotificacionesFactPesos" Type="tinyint" />
+    <Property Name="ImpuestoAlDebFactPesos" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionFactPesos" Type="tinyint" />
+    <Property Name="TasaComisionFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionFactPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisFactPesos" Type="tinyint" />
+    <Property Name="LimiteDeCreditoFactPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="LegalizacionFactDolares" Type="tinyint" />
+    <Property Name="NotificacionesFactDolares" Type="tinyint" />
+    <Property Name="ImpuestoAlDebFactDolares" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionFactDolares" Type="tinyint" />
+    <Property Name="TasaComisionFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionFactDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisFactDolares" Type="tinyint" />
+    <Property Name="LimiteDeCreditoFactDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="MismaTasaQueSuplidorConfPesos" Type="nchar" MaxLength="10" />
+    <Property Name="LegalizacionConfPesos" Type="tinyint" />
+    <Property Name="NotificacionesConfPesos" Type="tinyint" />
+    <Property Name="ImpuestoAlDebConfPesos" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionConfPesos" Type="tinyint" />
+    <Property Name="TasaComisionConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionConfPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisConfPesos" Type="tinyint" />
+    <Property Name="DiasAdicionalesConfPesos" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="LimiteDeCreditoConfPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="MismaTasaQueSuplidorConfDolares" Type="tinyint" />
+    <Property Name="LegalizacionConfDolares" Type="tinyint" />
+    <Property Name="NotificacionesConfDolares" Type="tinyint" />
+    <Property Name="ImpuestoAlDebConfDolares" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionConfDolares" Type="tinyint" />
+    <Property Name="TasaComisionConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionConfDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisConfDolares" Type="tinyint" />
+    <Property Name="DiasAdicionalesConfDolares" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="LimiteDeCreditoConfDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="SectorComercio" Type="nvarchar" MaxLength="3" />
+    <Property Name="SubSectorComercio" Type="nvarchar" MaxLength="3" />
+    <Property Name="Proceso" Type="bit" />
+    <Property Name="FechaProcesado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="GRL_NCFNULO">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Documento" />
+      <PropertyRef Name="TipoDocumento" />
+      <PropertyRef Name="FechaDocumento" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Documento" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="TipoDocumento" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="FechaDocumento" Type="date" Nullable="false" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="19" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GRL_NumeroDeTransaccion">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="NumTransaccion" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NumTransaccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NumeroModulo" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="TipoDocumento" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumeroDocumento" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="FechaDocumento" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GRL_Parametros">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="SecuenciaRc" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="CampoControl" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Fecha_ult_Mayor" Type="datetime" />
+    <Property Name="PrefijoCtaActivos" Type="nvarchar" MaxLength="14" />
+    <Property Name="PrefijoCtaCostos" Type="nvarchar" MaxLength="14" />
+    <Property Name="PreFijoCtaIngresos" Type="nvarchar" MaxLength="14" />
+    <Property Name="PrefijoCtaGastos" Type="nvarchar" MaxLength="14" />
+    <Property Name="CuentaResultado" Type="nvarchar" MaxLength="14" />
+    <Property Name="LONGITUD" Type="tinyint" />
+    <Property Name="SEPARADOR" Type="nvarchar" MaxLength="1" />
+    <Property Name="PREFIJO_LARGAD" Type="nvarchar" MaxLength="4" />
+    <Property Name="Itbis" Type="int" />
+    <Property Name="MascaraCuentas" Type="nvarchar" MaxLength="50" />
+    <Property Name="Marque" Type="int" />
+    <Property Name="SobreGiro" Type="int" />
+    <Property Name="TipoCheque" Type="int" />
+    <Property Name="TipoRecibo" Type="int" />
+    <Property Name="FechaUltCInv" Type="date" />
+    <Property Name="FechaUltCActivos" Type="date" />
+    <Property Name="FechaUltimaPosicion" Type="date" />
+    <Property Name="FechaUltAuxiliar" Type="date" />
+    <Property Name="super" Type="int" />
+    <Property Name="certi" Type="int" />
+    <Property Name="ruta" Type="nvarchar" MaxLength="50" />
+    <Property Name="CxC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CxP" Type="nvarchar" MaxLength="50" />
+    <Property Name="Prestamo" Type="nvarchar" MaxLength="50" />
+    <Property Name="cuentacaja" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescuentoCxC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescuentoCxP" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualizaCondeCxC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActualizaCondeCxP" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaCierreCxC" Type="date" />
+    <Property Name="conItbis" Type="int" />
+    <Property Name="ActualizaInvaCxP" Type="nvarchar" MaxLength="50" />
+    <Property Name="IdInv" Type="nvarchar" MaxLength="20" />
+    <Property Name="DIFERENCIA" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Regulada" Type="int" />
+    <Property Name="PrecioDeVentaITBISNoSi" Type="int" />
+    <Property Name="CostoConITBISNoSi" Type="int" />
+    <Property Name="EmiteRcCont" Type="nvarchar" MaxLength="3" />
+    <Property Name="CodificaRcCont" Type="nvarchar" MaxLength="3" />
+    <Property Name="EmiteFt" Type="nvarchar" MaxLength="3" />
+    <Property Name="ModificaFT" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaCredito" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaCreditoconAtraso" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaMora" Type="nvarchar" MaxLength="5" />
+    <Property Name="PorcientoMora" Type="nvarchar" MaxLength="5" />
+    <Property Name="EmiteRcCXC" Type="nvarchar" MaxLength="3" />
+    <Property Name="EmiteSolicitudChk" Type="nvarchar" MaxLength="3" />
+    <Property Name="CodificaSolicitudChk" Type="nvarchar" MaxLength="3" />
+    <Property Name="RevisarSolicitudChk" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebasolicitudChk" Type="nvarchar" MaxLength="3" />
+    <Property Name="CantidadCia" Type="int" />
+    <Property Name="PorIncrementoActivo" Type="float" />
+    <Property Name="CuantaDeVoluciones" Type="nvarchar" MaxLength="14" />
+    <Property Name="CuentaDeDVSinCargoEnCXC" Type="nvarchar" MaxLength="14" />
+    <Property Name="CuentaFuncionarioEmp" Type="nvarchar" MaxLength="14" />
+    <Property Name="RealizarDescuento" Type="nvarchar" MaxLength="3" />
+    <Property Name="BajaPrecio" Type="nvarchar" MaxLength="3" />
+    <Property Name="PrecioXdeBajoCosto" Type="nvarchar" MaxLength="3" />
+    <Property Name="CuentaCartera" Type="nvarchar" MaxLength="14" />
+    <Property Name="CInteres" Type="nvarchar" MaxLength="14" />
+    <Property Name="cComision" Type="nvarchar" MaxLength="14" />
+    <Property Name="cComisionVenta" Type="nvarchar" MaxLength="14" />
+    <Property Name="cMora" Type="nvarchar" MaxLength="14" />
+    <Property Name="cCaja" Type="nvarchar" MaxLength="14" />
+    <Property Name="cAdjudicado" Type="nvarchar" MaxLength="14" />
+    <Property Name="NoCobrable" Type="nvarchar" MaxLength="14" />
+    <Property Name="CuentaAuxiliarPr" Type="nvarchar" MaxLength="14" />
+    <Property Name="cOtros" Type="nvarchar" MaxLength="14" />
+    <Property Name="cAdministrativo" Type="nvarchar" MaxLength="14" />
+    <Property Name="cLegal" Type="nvarchar" MaxLength="14" />
+    <Property Name="cSeguro" Type="nvarchar" MaxLength="14" />
+    <Property Name="cExoneracion" Type="nvarchar" MaxLength="14" />
+    <Property Name="cTraspaso" Type="nvarchar" MaxLength="14" />
+    <Property Name="cRegistro" Type="nvarchar" MaxLength="14" />
+    <Property Name="cInteresCXC" Type="nvarchar" MaxLength="14" />
+    <Property Name="cComisionesCXC" Type="nvarchar" MaxLength="14" />
+    <Property Name="cInteresAnt" Type="nvarchar" MaxLength="14" />
+    <Property Name="cComisionesAnt" Type="nvarchar" MaxLength="14" />
+    <Property Name="GridComisiones" Type="bit" Nullable="false" />
+    <Property Name="GridComisionVenta" Type="bit" Nullable="false" />
+    <Property Name="GridRegistro" Type="bit" Nullable="false" />
+    <Property Name="GridSeguro" Type="bit" Nullable="false" />
+    <Property Name="GridExoneracion" Type="bit" Nullable="false" />
+    <Property Name="GridLegal" Type="bit" Nullable="false" />
+    <Property Name="GridOtros" Type="bit" Nullable="false" />
+    <Property Name="GridTraspaso" Type="bit" Nullable="false" />
+    <Property Name="GridCalculo" Type="bit" Nullable="false" />
+    <Property Name="ApruebaNotaCredito" Type="nvarchar" MaxLength="3" />
+    <Property Name="RealizaCambioTasaCer" Type="nvarchar" MaxLength="3" />
+    <Property Name="RealizaRetiroInt" Type="nvarchar" MaxLength="3" />
+    <Property Name="FechaCierreCer" Type="datetime" />
+    <Property Name="FechaCalculoCer" Type="datetime" />
+    <Property Name="CuentaInteresCertificado" Type="nvarchar" MaxLength="15" />
+    <Property Name="CuentaCapitalsCertificado1" Type="nvarchar" MaxLength="15" />
+    <Property Name="CuentaCapitalsCertificado2" Type="nvarchar" MaxLength="15" />
+    <Property Name="DigitaSolicitudPr" Type="nvarchar" MaxLength="3" />
+    <Property Name="RevisaSolicitudPr" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaSolicitudPr" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaDesembolsoPr" Type="nvarchar" MaxLength="3" />
+    <Property Name="ApruebaDesembolsoPrPrestamo" Type="nvarchar" MaxLength="6" />
+    <Property Name="DepuradoPorPr" Type="nvarchar" MaxLength="6" />
+    <Property Name="VerificadoDomPr" Type="nvarchar" MaxLength="6" />
+    <Property Name="AnalizadoPr" Type="nvarchar" MaxLength="6" />
+    <Property Name="ApruebaCalculoInteresDevengado" Type="nvarchar" MaxLength="6" />
+    <Property Name="gGestionFinanciera" Type="bit" />
+    <Property Name="AnularPrestamo" Type="nvarchar" MaxLength="6" />
+    <Property Name="AutorizaNcyPagoSoloCapital" Type="nvarchar" MaxLength="6" />
+    <Property Name="FechaControlMasAntigua" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GRL_RenglonDeProducto">
+    <Key>
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoProducto" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescProducto" Type="nvarchar" MaxLength="100" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="CodigoRenglon" Type="nvarchar" MaxLength="4" />
+    <Property Name="DescRenglon" Type="nvarchar" MaxLength="100" />
+    <Property Name="CuentaDebCont" Type="nvarchar" MaxLength="20" />
+    <Property Name="CuentaCreCont" Type="nvarchar" MaxLength="20" />
+    <Property Name="Origen" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="GRL_TipoDocumento">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="IDTipoDoc" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDTipoDoc" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NCF" Type="nchar" MaxLength="11" />
+    <Property Name="SecuenciaNCF" Type="nvarchar" MaxLength="8" />
+    <Property Name="Secuencia" Type="nvarchar" MaxLength="8" />
+    <Property Name="PreSecuencia" Type="nvarchar" MaxLength="8" />
+    <Property Name="SiCargo" Type="tinyint" />
+    <Property Name="Almacen" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.GRL_TIPODOCUMENTO_COPIA' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="GRL_TIPODOCUMENTO_COPIA">
+    <Key>
+      <PropertyRef Name="IDTipoDoc" />
+      <PropertyRef Name="Descripcion" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDTipoDoc" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NCF" Type="nchar" MaxLength="11" />
+    <Property Name="SecuenciaNCF" Type="nvarchar" MaxLength="8" />
+    <Property Name="Secuencia" Type="nvarchar" MaxLength="9" />
+    <Property Name="PreSecuencia" Type="nvarchar" MaxLength="8" />
+    <Property Name="SiCargo" Type="tinyint" />
+    <Property Name="Almacen" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="HST_MaestroCuenta">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CuentaCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="28" Nullable="false" />
+    <Property Name="CuentaControl" Type="nvarchar" MaxLength="28" />
+    <Property Name="DesCuentaCont" Type="nvarchar" MaxLength="80" />
+    <Property Name="FecAperCtaCont" Type="date" />
+    <Property Name="OrigenCuenta" Type="tinyint" />
+    <Property Name="AceptaMov" Type="tinyint" />
+    <Property Name="TieneAux" Type="nvarchar" MaxLength="3" />
+    <Property Name="BceCuentaCont" Type="money" />
+    <Property Name="ValorDebCont" Type="money" />
+    <Property Name="ValorCreCont" Type="money" Nullable="false" />
+    <Property Name="BceEneCont" Type="money" />
+    <Property Name="BceFebCont" Type="money" />
+    <Property Name="BceMarCont" Type="money" />
+    <Property Name="BceAbrCont" Type="money" />
+    <Property Name="BceMayCont" Type="money" />
+    <Property Name="BceJunCont" Type="money" />
+    <Property Name="BceJulCont" Type="money" />
+    <Property Name="BceAgoCont" Type="money" />
+    <Property Name="BceSepCont" Type="money" />
+    <Property Name="BceOctCont" Type="money" />
+    <Property Name="BceNovCont" Type="money" />
+    <Property Name="BceDicCont" Type="money" />
+    <Property Name="Bce13Cont" Type="money" />
+    <Property Name="Analitico" Type="tinyint" />
+    <Property Name="Periodo" Type="nvarchar" MaxLength="4" />
+    <Property Name="Mes" Type="int" />
+  </EntityType>
+  <EntityType Name="MaestraConceptoRC">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="CuentaCont1" Type="nvarchar" MaxLength="20" />
+    <Property Name="TieneAux" Type="int" />
+    <Property Name="MovCuenta1" Type="int" />
+    <Property Name="CuentaContraPartida" Type="nvarchar" MaxLength="20" />
+    <Property Name="Tarifa" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Transacciones.dbo.MaestraMonedasPr' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="MaestraMonedasPr">
+          <Property Name="Cia" Type="nvarchar" MaxLength="3" />
+          <Property Name="FechaHoraReg" Type="datetime" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+          <Property Name="CodigoMoneda" Type="nvarchar" MaxLength="4" />
+          <Property Name="NombreMoneda" Type="nvarchar" MaxLength="40" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="150" />
+          <Property Name="Simbologia" Type="nvarchar" MaxLength="8" />
+          <Property Name="TasaActual" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="CuentaCaja" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaCaja" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaDescuento" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaDescuento" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaCxc" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaCxc" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaCajaCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaCajaCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaDescuentoCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaDescuentoCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="PrimaCxp" Type="nvarchar" MaxLength="28" />
+          <Property Name="FechaHora" Type="smalldatetime" />
+        </EntityType>-->
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.MaestraNCF' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MaestraNCF">
+    <Key>
+      <PropertyRef Name="OrdenNCF" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="2" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="TipoDoc" Type="nvarchar" MaxLength="4" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="22" />
+    <Property Name="OrdenNCF" Type="float" Nullable="false" />
+    <Property Name="DescripcionNCF" Type="nvarchar" MaxLength="400" />
+    <Property Name="Minimo" Type="nvarchar" MaxLength="16" />
+    <Property Name="Maximo" Type="nvarchar" MaxLength="16" />
+    <Property Name="Secuencia" Type="nvarchar" MaxLength="16" />
+    <Property Name="Activo" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Transacciones.dbo.MaestroBancos' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="MaestroBancos">
+          <Property Name="Cia" Type="nvarchar" MaxLength="3" />
+          <Property Name="FechaHoraReg" Type="datetime" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+          <Property Name="CodAbrPb" Type="nvarchar" MaxLength="4" />
+          <Property Name="DesCodPb" Type="nvarchar" MaxLength="120" />
+          <Property Name="SectorPb" Type="nvarchar" MaxLength="80" />
+          <Property Name="CiudadPb" Type="nvarchar" MaxLength="80" />
+          <Property Name="TasaIntSobreGiroPb" Type="float" />
+          <Property Name="TasaIntSobreTranPb" Type="float" />
+          <Property Name="ValorCobrarCkDvPb" Type="float" />
+          <Property Name="ValorLineaTranPb" Type="float" />
+          <Property Name="ValorLineaCrPb" Type="float" />
+          <Property Name="CuentaCont" Type="nvarchar" MaxLength="28" />
+          <Property Name="CuentaDelBcoPb" Type="nvarchar" MaxLength="100" />
+          <Property Name="TelefonoBcoPb" Type="nvarchar" MaxLength="28" />
+          <Property Name="FaxBcoPb" Type="nvarchar" MaxLength="28" />
+          <Property Name="E_mailBcoPb" Type="nvarchar" MaxLength="100" />
+          <Property Name="WebSiteBcoPb" Type="nvarchar" MaxLength="100" />
+          <Property Name="GteCtaBcoPb" Type="nvarchar" MaxLength="100" />
+          <Property Name="RncBcoPb" Type="nvarchar" MaxLength="26" />
+          <Property Name="FecAperCtaPb" Type="datetime" />
+          <Property Name="UltimoChequeE" Type="nvarchar" MaxLength="16" />
+          <Property Name="RutaArriba" Type="nvarchar" MaxLength="100" />
+          <Property Name="RutaAbajo" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <!--Errores durante la generación:
+advertencia 6013: La tabla o vista 'Transacciones.dbo.MaestroEDFija' no tiene definida una clave principal y no es posible inferir ninguna clave principal válida. Esta tabla o vista se ha excluido. Para usar la entidad, necesitará revisar el esquema, agregar las claves correctas y quitar sus comentarios.
+        <EntityType Name="MaestroEDFija">
+          <Property Name="Cia" Type="nvarchar" MaxLength="3" />
+          <Property Name="FechaHoraReg" Type="datetime" />
+          <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+          <Property Name="CodigoED" Type="nvarchar" MaxLength="16" />
+          <Property Name="NumeroED" Type="nvarchar" MaxLength="16" />
+          <Property Name="DescripcionED" Type="nvarchar" MaxLength="160" />
+          <Property Name="FecUltActED" Type="date" />
+          <Property Name="DetalleED" Type="nvarchar" MaxLength="4000" />
+        </EntityType>-->
+  <EntityType Name="MaestroRc">
+    <Key>
+      <PropertyRef Name="Cia" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NumeroRc" Type="nvarchar" MaxLength="16" />
+    <Property Name="FechaRc" Type="date" Nullable="false" />
+    <Property Name="Beneficiario" Type="nvarchar" MaxLength="340" />
+    <Property Name="Detalle" Type="nvarchar" MaxLength="340" />
+    <Property Name="RealizadoPor" Type="nvarchar" MaxLength="100" />
+    <Property Name="TotalRc" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorEfectivo" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="EstatusRc" Type="nvarchar" MaxLength="2" />
+    <Property Name="FecActContRc" Type="date" />
+    <Property Name="ChequeNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="DeFecha" Type="date" />
+    <Property Name="Banco" Type="nvarchar" MaxLength="100" />
+    <Property Name="Cuentadebanco" Type="nvarchar" MaxLength="100" />
+    <Property Name="CodigoMoneda" Type="nvarchar" MaxLength="4" />
+    <Property Name="Almacen" Type="nvarchar" MaxLength="8" />
+    <Property Name="TipoDocCont" Type="nvarchar" MaxLength="2" />
+    <Property Name="TipoNCF" Type="int" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="19" />
+    <Property Name="RNC" Type="nvarchar" MaxLength="20" />
+    <Property Name="DescripcionNCF" Type="nvarchar" MaxLength="80" />
+    <Property Name="IDOperacionSIB" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.Prueba' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Prueba">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PTC_CiasConsolidadas">
+    <Key>
+      <PropertyRef Name="CodigoCia" />
+      <PropertyRef Name="CodigoCia2" />
+    </Key>
+    <Property Name="CodigoCia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoCia2" Type="nvarchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_CobrosRealizadosOffline">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="CodigoCobrador" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="Moneda" />
+      <PropertyRef Name="NombreDispositivoMovil" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NoTransaccion" Type="nvarchar" MaxLength="12" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="CodigoCobrador" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="Capital" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Comision" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="IntAdicional" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Auxiliar" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Mora" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Moneda" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="DescripcionMoneda" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConceptoDelPago" Type="nvarchar" MaxLength="1000" />
+    <Property Name="NombreDispositivoMovil" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreCompañia" Type="nvarchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="PTC_CuotasDePrestamo">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="CuotaNumPtm" />
+      <PropertyRef Name="FechaVencCuota" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CuotaNumPtm" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaVencCuota" Type="date" Nullable="false" />
+    <Property Name="ValorCuotaCap" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaInt" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaCom" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaComVta" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaTrasp" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaReg" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaSeg" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaExo" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaLegal" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaOtros" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="PTC_CuotasDePrestamoRen">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="NumDocCont" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="CuotaNumPtm" />
+      <PropertyRef Name="FechaVencCuota" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NumDocCont" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CuotaNumPtm" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaVencCuota" Type="datetime" Nullable="false" />
+    <Property Name="ValorCuotaCap" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaInt" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaCom" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaComVta" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaTrasp" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaReg" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaSeg" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaExo" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaLegal" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaOtros" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="FechaNegociacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_FechaRecordatorioDePago">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Clave" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_MaestraOficialesCobrosPr">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodigoOficial" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="40" />
+    <Property Name="CodigoOficial" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="80" />
+    <Property Name="Control" Type="nvarchar" MaxLength="4" />
+    <Property Name="Cedula" Type="nvarchar" MaxLength="15" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="120" />
+    <Property Name="Telefono" Type="nvarchar" MaxLength="25" />
+    <Property Name="Fax" Type="nvarchar" MaxLength="25" />
+    <Property Name="Celular" Type="nvarchar" MaxLength="25" />
+    <Property Name="Beeper" Type="nvarchar" MaxLength="25" />
+    <Property Name="Mail" Type="nvarchar" MaxLength="80" />
+    <Property Name="TasaComision" Type="numeric" Precision="10" Scale="2" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroAplicaciones">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodigoApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescripcionApls" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrdenApls" Type="int" />
+    <Property Name="Grupo" Type="nvarchar" MaxLength="3" />
+    <Property Name="IdIcon" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.PTC_MaestroCias' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PTC_MaestroCias">
+    <Key>
+      <PropertyRef Name="FechaHoraReg" />
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="CodigoCia" Type="nvarchar" MaxLength="3" />
+    <Property Name="FechaHoraReg" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreCia" Type="nvarchar" MaxLength="80" />
+    <Property Name="NombreClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApellidoClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionCia" Type="ntext" />
+    <Property Name="CiudadCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="SectorCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="PaisCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProvinciaCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="RncCia" Type="nvarchar" MaxLength="12" />
+    <Property Name="RegistroMercantilCia" Type="nvarchar" MaxLength="14" />
+    <Property Name="TelefonosCia" Type="nvarchar" MaxLength="100" />
+    <Property Name="FaxCia" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="WebCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="LocalNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Consolidacion" Type="tinyint" />
+    <Property Name="LogoCia" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroClasificacionPgms">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodigoTipoPgm" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoTipoPgm" Type="nvarchar" MaxLength="1" Nullable="false" />
+    <Property Name="DescripcionTipoPgm" Type="nvarchar" MaxLength="40" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroClientes">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodClteApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodClteApls" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="NomClteApls" Type="nvarchar" MaxLength="150" />
+    <Property Name="ApeClteApls" Type="nvarchar" MaxLength="100" />
+    <Property Name="DireccionClteApls" Type="nvarchar" MaxLength="150" />
+    <Property Name="SectorClteApls" Type="nvarchar" MaxLength="40" />
+    <Property Name="TipoClteApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="NacionalidadClteApls" Type="nvarchar" MaxLength="50" />
+    <Property Name="FecAperClteApls" Type="date" />
+    <Property Name="TipoID" Type="nvarchar" MaxLength="1" />
+    <Property Name="CedRncClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="FechaNac1Apls" Type="date" />
+    <Property Name="EstadoCivilClteApls" Type="nvarchar" MaxLength="1" />
+    <Property Name="CiudadClteApls" Type="nvarchar" MaxLength="50" />
+    <Property Name="PaisClteApls" Type="nvarchar" MaxLength="40" />
+    <Property Name="ProvinciaClteApls" Type="nvarchar" MaxLength="4" />
+    <Property Name="Ocupacion" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sexo" Type="nvarchar" MaxLength="1" />
+    <Property Name="RegistroMercantil" Type="nvarchar" MaxLength="20" />
+    <Property Name="TelefonosClteApls" Type="nvarchar" MaxLength="30" />
+    <Property Name="TelefonoOficinaClteApls" Type="nvarchar" MaxLength="30" />
+    <Property Name="FaxClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="CelularClteApls" Type="nvarchar" MaxLength="20" />
+    <Property Name="BeeperClteApls" Type="varbinary" MaxLength="180" />
+    <Property Name="E_mailClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="E_mail2ClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="WebSiteClteApls" Type="nvarchar" MaxLength="60" />
+    <Property Name="Estatus" Type="tinyint" />
+    <Property Name="Comentario" Type="nvarchar" MaxLength="200" />
+    <Property Name="Comision" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="NombreConyuge" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApellidoConyuge" Type="nvarchar" MaxLength="40" />
+    <Property Name="CedulaConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="TelefonoConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="CelularConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="BeeperConyuge" Type="nvarchar" MaxLength="20" />
+    <Property Name="DireccionConyuge" Type="nvarchar" MaxLength="50" />
+    <Property Name="Aniversario" Type="date" />
+    <Property Name="EmpresaL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CedulaL" Type="nvarchar" MaxLength="20" />
+    <Property Name="DireccionL" Type="nvarchar" MaxLength="50" />
+    <Property Name="NacionalidadL" Type="nvarchar" MaxLength="30" />
+    <Property Name="SectorL" Type="nvarchar" MaxLength="50" />
+    <Property Name="CiudadL" Type="nvarchar" MaxLength="50" />
+    <Property Name="TelefonoL" Type="nvarchar" MaxLength="20" />
+    <Property Name="FaxL" Type="nvarchar" MaxLength="20" />
+    <Property Name="MailL" Type="nvarchar" MaxLength="60" />
+    <Property Name="CargoL" Type="nvarchar" MaxLength="50" />
+    <Property Name="JefeL" Type="nvarchar" MaxLength="50" />
+    <Property Name="SueldoL" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="FechaIngreso" Type="date" />
+    <Property Name="PrestacionesAcum" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="SinRegalia" Type="tinyint" />
+    <Property Name="Prestaciones76" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Prestaciones40" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo1" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo1" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo2" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo2" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo3" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo3" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Activo4" Type="nvarchar" MaxLength="250" />
+    <Property Name="ValorActivo4" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CuentaBanco1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco1" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuentaBanco2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CuentaBanco3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Banco3" Type="nvarchar" MaxLength="50" />
+    <Property Name="DescripcionFirma" Type="nvarchar" MaxLength="250" />
+    <Property Name="ActividadS" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoEmpresaS" Type="nvarchar" MaxLength="2" />
+    <Property Name="CuentaS" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoDeudorS" Type="nvarchar" MaxLength="3" />
+    <Property Name="AutorizadoC" Type="nvarchar" MaxLength="50" />
+    <Property Name="CedulaAutoC" Type="nvarchar" MaxLength="50" />
+    <Property Name="ObservacionesC" Type="nvarchar" MaxLength="350" />
+    <Property Name="Limite" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CodigoVendApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="CodigoZonaApls" Type="nvarchar" MaxLength="3" />
+    <Property Name="Contacto" Type="nvarchar" MaxLength="40" />
+    <Property Name="ClasificacionCliente" Type="nvarchar" MaxLength="4" />
+    <Property Name="ClienteGeneral" Type="tinyint" />
+    <Property Name="ClienteFactoring" Type="tinyint" />
+    <Property Name="ContactoEmpresa" Type="tinyint" />
+    <Property Name="Deudor" Type="tinyint" />
+    <Property Name="ProveedorCliente" Type="tinyint" />
+    <Property Name="RepresentanteLegal" Type="tinyint" />
+    <Property Name="TasaInteres" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMora" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReserva" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaInteresD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaD" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="DiasReservaPesos" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasReservaDolares" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="TasaInteresConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaInteresDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaMoraDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="TasaReservaDConf" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="DiasReservaPesosConf" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasReservaDolaresConf" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasMinInt" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="DiasCalcIntCxc" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="NoCuentaP" Type="nvarchar" MaxLength="50" />
+    <Property Name="BancoBeneficiarioP" Type="nvarchar" MaxLength="50" />
+    <Property Name="DireccionBancoP" Type="nvarchar" MaxLength="250" />
+    <Property Name="TipoCuentaP" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftBancoP" Type="nvarchar" MaxLength="50" />
+    <Property Name="BeneficiarioD" Type="nvarchar" MaxLength="100" />
+    <Property Name="DireccionBeneficiarioD" Type="nvarchar" MaxLength="250" />
+    <Property Name="BancoBenefPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DireccionBancoPrimerD" Type="nvarchar" MaxLength="250" />
+    <Property Name="NoCuentaPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="ABAPrimerD" Type="nvarchar" MaxLength="50" />
+    <Property Name="BancoIntermediarioD" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DireccionBancoIntermD" Type="nvarchar" MaxLength="120" />
+    <Property Name="NoCuentaIntermD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SwiftIntermD" Type="nvarchar" MaxLength="50" />
+    <Property Name="NCfEmitidoA" Type="nvarchar" MaxLength="1" />
+    <Property Name="DevolucionInteres" Type="nvarchar" MaxLength="1" />
+    <Property Name="FactoringOConfirming" Type="nvarchar" MaxLength="1" />
+    <Property Name="TasaIntDespVencFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="LegalizacionFactPesos" Type="tinyint" />
+    <Property Name="NotificacionesFactPesos" Type="tinyint" />
+    <Property Name="ImpuestoAlDebFactPesos" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionFactPesos" Type="tinyint" />
+    <Property Name="TasaComisionFactPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionFactPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisFactPesos" Type="tinyint" />
+    <Property Name="LimiteDeCreditoFactPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="LegalizacionFactDolares" Type="tinyint" />
+    <Property Name="NotificacionesFactDolares" Type="tinyint" />
+    <Property Name="ImpuestoAlDebFactDolares" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionFactDolares" Type="tinyint" />
+    <Property Name="TasaComisionFactDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionFactDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisFactDolares" Type="tinyint" />
+    <Property Name="LimiteDeCreditoFactDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="MismaTasaQueSuplidorConfPesos" Type="nvarchar" MaxLength="50" />
+    <Property Name="LegalizacionConfPesos" Type="tinyint" />
+    <Property Name="NotificacionesConfPesos" Type="tinyint" />
+    <Property Name="ImpuestoAlDebConfPesos" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionConfPesos" Type="tinyint" />
+    <Property Name="TasaComisionConfPesos" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionConfPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisConfPesos" Type="tinyint" />
+    <Property Name="DiasAdicionalesConfPesos" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="LimiteDeCreditoConfPesos" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="TasaIntDespVencConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="MismaTasaQueSuplidorConfDolares" Type="tinyint" />
+    <Property Name="LegalizacionConfDolares" Type="tinyint" />
+    <Property Name="NotificacionesConfDolares" Type="tinyint" />
+    <Property Name="ImpuestoAlDebConfDolares" Type="tinyint" />
+    <Property Name="TasaImpuestoAlDebitoConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="CobroDeComisionConfDolares" Type="tinyint" />
+    <Property Name="TasaComisionConfDolares" Type="numeric" Precision="18" Scale="6" />
+    <Property Name="ValorComisionConfDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="ItbisConfDolares" Type="tinyint" />
+    <Property Name="DiasAdicionalesConfDolares" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="LimiteDeCreditoConfDolares" Type="numeric" Precision="18" Scale="2" />
+    <Property Name="SectorComercio" Type="nvarchar" MaxLength="3" />
+    <Property Name="SubSectorComercio" Type="nvarchar" MaxLength="3" />
+    <Property Name="Eliminado" Type="bit" Nullable="false" />
+    <Property Name="FechaEliminado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroPgms">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="NombreFrm" />
+      <PropertyRef Name="CodigoApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreFrm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CodigoTipoPgm" Type="nvarchar" MaxLength="2" />
+    <Property Name="OrdenDelFrmEnApls" Type="smallint" Nullable="false" />
+    <Property Name="DescripcionFrm" Type="nvarchar" MaxLength="60" />
+    <Property Name="DescripcionCompletaFrm" Type="nvarchar" MaxLength="120" />
+    <Property Name="Grupo" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.PTC_MaestroPgms1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="PTC_MaestroPgms1">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="NombreFrm" />
+      <PropertyRef Name="CodigoApls" />
+      <PropertyRef Name="OrdenDelFrmEnApls" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreFrm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="CodigoTipoPgm" Type="nvarchar" MaxLength="2" />
+    <Property Name="OrdenDelFrmEnApls" Type="smallint" Nullable="false" />
+    <Property Name="DescripcionFrm" Type="nvarchar" MaxLength="60" />
+    <Property Name="DescripcionCompletaFrm" Type="nvarchar" MaxLength="120" />
+    <Property Name="Grupo" Type="int" />
+    <Property Name="Url" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroPrestamos">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Contrato" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="CodigoCliente" Type="nvarchar" MaxLength="8" />
+    <Property Name="FechaPtm" Type="date" />
+    <Property Name="MontoPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CuotasPtm" Type="smallint" />
+    <Property Name="CuotasTraspPtm" Type="smallint" />
+    <Property Name="InteresPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="OtrosPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="FrecuenciaCuotaPtm" Type="tinyint" />
+    <Property Name="TasaIntPtm" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="TasaMoraPtm" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="Cobrador" Type="nvarchar" MaxLength="4" />
+    <Property Name="Vencimiento" Type="tinyint" />
+    <Property Name="PagarePtm" Type="nvarchar" MaxLength="8" />
+    <Property Name="InicialPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="14" />
+    <Property Name="StatusPtm" Type="nvarchar" MaxLength="1" />
+    <Property Name="InteresAntPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ComisionPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ComisionAntPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ComisionVentas" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="TraspasoPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="RegistroPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="SeguroPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ExoneracionPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="LegalPtm" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="CuentaCiiu" Type="nvarchar" MaxLength="14" />
+    <Property Name="TasaComPtm" Type="float" />
+    <Property Name="TasaComisionVentas" Type="float" />
+    <Property Name="Oficial" Type="nvarchar" MaxLength="4" />
+    <Property Name="Corredor" Type="nvarchar" MaxLength="6" />
+    <Property Name="Producto" Type="nvarchar" MaxLength="4" />
+    <Property Name="Clasificacion" Type="nvarchar" MaxLength="4" />
+    <Property Name="Moneda" Type="nvarchar" MaxLength="2" />
+    <Property Name="TipoGarantiaPtm" Type="nvarchar" MaxLength="3" />
+    <Property Name="PeriodoGracias" Type="smallint" />
+    <Property Name="PagosEspeciales" Type="tinyint" />
+    <Property Name="AbsolutoInsoluto" Type="tinyint" />
+    <Property Name="CobrosSobreSaldos" Type="tinyint" />
+    <Property Name="TipoTabla" Type="tinyint" />
+    <Property Name="NumeroCheque" Type="nvarchar" MaxLength="8" />
+    <Property Name="CodigoFiador" Type="nvarchar" MaxLength="14" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="19" />
+    <Property Name="NotaPtm" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PTC_MaestroUsuarios">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="IdentificacionUsr" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdentificacionUsr" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ClaveDeAccesoUsr" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreUsr" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodigoCia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="TodoTipoAccesoCia" Type="tinyint" />
+    <Property Name="EscribirUsr" Type="tinyint" />
+    <Property Name="LeerUsr" Type="tinyint" />
+    <Property Name="ActualizarUsr" Type="tinyint" />
+    <Property Name="EliminarUsr" Type="tinyint" />
+    <Property Name="Consolidado" Type="int" />
+  </EntityType>
+  <EntityType Name="PTC_MovimientosRelacionCobradores">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodigoCobrador" />
+      <PropertyRef Name="Fecha" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="CodigoCliente" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoCobrador" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodigoCliente" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="NombreApls" Type="nvarchar" MaxLength="255" />
+    <Property Name="CedulaRnc" Type="nvarchar" MaxLength="50" />
+    <Property Name="FechaUltimoPago" Type="datetime" />
+    <Property Name="ValorUltimoPago" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Pagadas" Type="nvarchar" MaxLength="3" />
+    <Property Name="Pendientes" Type="nvarchar" MaxLength="3" />
+    <Property Name="ValorCuotaCap" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaInt" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaCom" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorCuotaOtros" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoCap" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoInt" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoCom" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoOtros" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceIntAdicional" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceMora" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="BceAuxiliar" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="PagosEspeciales" Type="int" />
+    <Property Name="DetalleCuotasEspeciales" Type="ntext" />
+    <Property Name="FechaCuotas" Type="ntext" />
+    <Property Name="CodigoMoneda" Type="nvarchar" MaxLength="2" />
+    <Property Name="NombreMoneda" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreCompañia" Type="nvarchar" MaxLength="250" />
+    <Property Name="DireccionCliente" Type="nvarchar" MaxLength="300" />
+    <Property Name="MontoPtm" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="PTC_PagosDePrestamo">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="FechaDocCont" />
+      <PropertyRef Name="TipoDocCont" />
+      <PropertyRef Name="NumDocCont" />
+      <PropertyRef Name="MovDocCont" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="FechaDocCont" Type="date" Nullable="false" />
+    <Property Name="TipoDocCont" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="NumDocCont" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="MovDocCont" Type="tinyint" Nullable="false" />
+    <Property Name="TasayOtros" Type="numeric" Precision="17" Scale="4" />
+    <Property Name="CodigoCobrador" Type="nvarchar" MaxLength="4" />
+    <Property Name="ValorPagoCapital" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoInteres" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoComision" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoComisionVenta" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoMora" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoTraspaso" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoRegistro" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoSeguro" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoExoneracion" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoLegal" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="ValorPagoOtros" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="19" />
+    <Property Name="NoTransaccion" Type="nvarchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="PTC_ProgramasPorUsuarios">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="IdentificacionUsr" />
+      <PropertyRef Name="CodigoApls" />
+      <PropertyRef Name="NombreFrm" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdentificacionUsr" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="NombreFrm" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="TodoTipoAccesUsrpgms" Type="tinyint" />
+    <Property Name="EscribirUsrpgms" Type="tinyint" />
+    <Property Name="LeerUsrpgms" Type="tinyint" />
+    <Property Name="ModificarUsrpgms" Type="tinyint" />
+    <Property Name="EliminarUsrpgms" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="PTC_rptCalculoMoraPrestamo">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cuota" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Valor" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Dias" Type="nvarchar" MaxLength="6" Nullable="false" />
+    <Property Name="Calculo" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="TasaAnual" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_rptCuotasVencidasYNoSaldadas">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="CodigoCliente" />
+      <PropertyRef Name="Contrato" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoCliente" Type="nvarchar" MaxLength="17" Nullable="false" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cuotas" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Capital" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Comision" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="ComisionVenta" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Traspaso" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Registro" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Seguro" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Exoneracion" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Legal" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="FechaCuotas" Type="date" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_rptListaMovimientosPrestamo">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Contrato" />
+      <PropertyRef Name="CodigoCliente" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Contrato" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CodigoCliente" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Cliente" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Mov" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Dia" Type="int" Nullable="false" />
+    <Property Name="Documento" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="Capital" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Mora" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_rptMovimientosPrestamo">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="40" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="Documento" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="Movimiento" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="Capital" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Mora" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_rptTasaRendimiento">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Cuota" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="ValorCuota" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Comision" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Amortizar" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Saldo" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_SecuenciaPrestamos">
+    <Key>
+      <PropertyRef Name="Cia" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="SecuenciaPr" Type="nvarchar" MaxLength="8" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PTC_TipoDocumento">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="IDTipoDoc" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IDTipoDoc" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="11" />
+    <Property Name="Secuencia" Type="nvarchar" MaxLength="8" />
+    <Property Name="PreSecuencia" Type="nvarchar" MaxLength="8" />
+    <Property Name="siCargo" Type="tinyint" />
+    <Property Name="Almacen" Type="nvarchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="PTC_tmpReporteInteresComision">
+    <Key>
+      <PropertyRef Name="Cia" />
+      <PropertyRef Name="Prestmos" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="Prestmos" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Balance" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Interes" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Comision" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Otros" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="CuotaVenc" Type="int" Nullable="false" />
+    <Property Name="DiasVenc" Type="int" Nullable="false" />
+    <Property Name="Mora" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="Total" Type="numeric" Precision="19" Scale="2" Nullable="false" />
+    <Property Name="PC" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReciboCodificado">
+    <Key>
+      <PropertyRef Name="Cia" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" Nullable="false" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NumeroRc" Type="nvarchar" MaxLength="16" />
+    <Property Name="Movimiento" Type="tinyint" Nullable="false" />
+    <Property Name="CuentaCont" Type="nvarchar" MaxLength="28" />
+    <Property Name="CodigoAux" Type="nvarchar" MaxLength="30" />
+    <Property Name="Fecmovaux" Type="date" Nullable="false" />
+    <Property Name="FecMovAplicAux" Type="date" Nullable="false" />
+    <Property Name="TipoDocMovAplicAux" Type="nvarchar" MaxLength="4" />
+    <Property Name="NumDocMovAplicAux" Type="nvarchar" MaxLength="16" />
+    <Property Name="AplicPrestamo" Type="nvarchar" MaxLength="16" />
+    <Property Name="DetalleAux" Type="nvarchar" MaxLength="100" />
+    <Property Name="Valor" Type="numeric" Precision="19" Scale="2" />
+    <Property Name="Almacen" Type="nvarchar" MaxLength="8" />
+    <Property Name="TipoDocCont" Type="nvarchar" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="SEG_AplicacionePorCompanias">
+    <Key>
+      <PropertyRef Name="CodigoCia" />
+      <PropertyRef Name="CodigoAplicaciones" />
+      <PropertyRef Name="Fecha" />
+    </Key>
+    <Property Name="CodigoCia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="CodigoAplicaciones" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="Estatus" Type="tinyint" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Observacion" Type="nvarchar" MaxLength="100" />
+    <Property Name="CostoMensualAplicacion" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="Seg_MaestroAplicaciones">
+    <Key>
+      <PropertyRef Name="CodigoApls" />
+    </Key>
+    <Property Name="CodigoApls" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DescripcionApls" Type="nvarchar" MaxLength="50" />
+    <Property Name="OrdenApls" Type="int" />
+    <Property Name="Grupo" Type="nvarchar" MaxLength="3" />
+    <Property Name="idIcon" Type="int" />
+    <Property Name="CostosApls" Type="numeric" Precision="19" Scale="2" />
+  </EntityType>
+  <EntityType Name="SEG_MaestroCias">
+    <Key>
+      <PropertyRef Name="Cia" />
+    </Key>
+    <Property Name="Cia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreCia" Type="nvarchar" MaxLength="80" />
+    <Property Name="NombreClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApellidoClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionCia" Type="nvarchar" MaxLength="80" />
+    <Property Name="CiudadCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="SectorCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="PaisCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="RncCia" Type="nvarchar" MaxLength="14" />
+    <Property Name="TelefonosCia" Type="nvarchar" MaxLength="30" />
+    <Property Name="FaxCia" Type="nvarchar" MaxLength="16" />
+    <Property Name="EmailCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="WebCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="LocalNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Consolidacion" Type="tinyint" />
+    <Property Name="Estatus" Type="tinyint" />
+    <Property Name="PagoConTarjeta" Type="tinyint" />
+    <Property Name="DiaDelPago" Type="int" />
+    <Property Name="FechaUltimoPago" Type="date" />
+    <Property Name="NombreTitularTarjeta" Type="nvarchar" MaxLength="40" />
+    <Property Name="NumeroTarjeta" Type="nvarchar" MaxLength="21" />
+    <Property Name="Expira" Type="nvarchar" MaxLength="6" />
+    <Property Name="CVV" Type="int" />
+    <Property Name="Direccion1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direccion2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodigoPostal" Type="nvarchar" MaxLength="12" />
+    <Property Name="Pais" Type="nvarchar" MaxLength="50" />
+    <Property Name="Servidor" Type="nvarchar" MaxLength="60" />
+    <Property Name="Instancia" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Transacciones.dbo.SEG_MaestroCias1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="SEG_MaestroCias1">
+    <Key>
+      <PropertyRef Name="Cia" />
+    </Key>
+    <Property Name="Cia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="NombreCia" Type="nvarchar" MaxLength="80" />
+    <Property Name="NombreClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="ApellidoClte" Type="nvarchar" MaxLength="60" />
+    <Property Name="DireccionCia" Type="nvarchar" MaxLength="80" />
+    <Property Name="CiudadCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="SectorCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="PaisCia" Type="nvarchar" MaxLength="40" />
+    <Property Name="RncCia" Type="nvarchar" MaxLength="12" />
+    <Property Name="TelefonosCia" Type="nvarchar" MaxLength="30" />
+    <Property Name="FaxCia" Type="nvarchar" MaxLength="16" />
+    <Property Name="EmailCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="WebCia" Type="nvarchar" MaxLength="60" />
+    <Property Name="LocalNo" Type="nvarchar" MaxLength="20" />
+    <Property Name="Consolidacion" Type="tinyint" />
+    <Property Name="Estatus" Type="tinyint" />
+    <Property Name="PagoConTarjeta" Type="tinyint" />
+    <Property Name="DiaDelPago" Type="int" />
+    <Property Name="FechaUltimoPago" Type="date" />
+    <Property Name="NombreTitularTarjeta" Type="nvarchar" MaxLength="40" />
+    <Property Name="NumeroTarjeta" Type="nvarchar" MaxLength="21" />
+    <Property Name="Expira" Type="nvarchar" MaxLength="6" />
+    <Property Name="CVV" Type="int" />
+    <Property Name="Direccion1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Direccion2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Ciudad" Type="nvarchar" MaxLength="50" />
+    <Property Name="CodigoPostal" Type="nvarchar" MaxLength="12" />
+    <Property Name="Pais" Type="nvarchar" MaxLength="50" />
+    <Property Name="Servidor" Type="nvarchar" MaxLength="60" />
+    <Property Name="Instancia" Type="nvarchar" MaxLength="60" />
+  </EntityType>
+  <EntityType Name="Seg_MaestroUsuarios">
+    <Key>
+      <PropertyRef Name="CodigoCia" />
+      <PropertyRef Name="IdentificacionUsr" />
+    </Key>
+    <Property Name="CodigoCia" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="FechaHoraReg" Type="datetime" />
+    <Property Name="Usuario" Type="nvarchar" MaxLength="20" />
+    <Property Name="IdentificacionUsr" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ClaveDeAccesoUsr" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NombreUsr" Type="nvarchar" MaxLength="50" />
+    <Property Name="TodoTipoAccesoCia" Type="tinyint" />
+    <Property Name="EscribirUsr" Type="tinyint" />
+    <Property Name="LeerUsr" Type="tinyint" />
+    <Property Name="ActualizarUsr" Type="tinyint" />
+    <Property Name="EliminarUsr" Type="tinyint" />
+    <Property Name="Consolidado" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Function Name="dt_addtosourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchSourceSafeINI" Type="varchar" Mode="In" />
+    <Parameter Name="vchProjectName" Type="varchar" Mode="In" />
+    <Parameter Name="vchComment" Type="varchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_addtosourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchSourceSafeINI" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchProjectName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="dt_adduserobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="dt_adduserobject_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchProperty" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_checkinobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="vchComment" Type="varchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+    <Parameter Name="iActionFlag" Type="int" Mode="In" />
+    <Parameter Name="txStream1" Type="text" Mode="In" />
+    <Parameter Name="txStream2" Type="text" Mode="In" />
+    <Parameter Name="txStream3" Type="text" Mode="In" />
+  </Function>
+  <Function Name="dt_checkinobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+    <Parameter Name="iActionFlag" Type="int" Mode="In" />
+    <Parameter Name="txStream1" Type="text" Mode="In" />
+    <Parameter Name="txStream2" Type="text" Mode="In" />
+    <Parameter Name="txStream3" Type="text" Mode="In" />
+  </Function>
+  <Function Name="dt_checkoutobject" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="vchComment" Type="varchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+    <Parameter Name="iActionFlag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_checkoutobject_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchComment" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="iVCSFlags" Type="int" Mode="In" />
+    <Parameter Name="iActionFlag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_displayoaerror" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iObject" Type="int" Mode="In" />
+    <Parameter Name="iresult" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_displayoaerror_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="iObject" Type="int" Mode="In" />
+    <Parameter Name="iresult" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_droppropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_dropuserobjectbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_generateansiname" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="name" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="dt_getobjwithprop" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="value" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_getobjwithprop_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="dt_getpropertiesbyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_getpropertiesbyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_getpropertiesbyid_vcs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="value" Type="varchar" Mode="InOut" />
+  </Function>
+  <Function Name="dt_getpropertiesbyid_vcs_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="value" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <Function Name="dt_isundersourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+    <Parameter Name="iWhoToo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_isundersourcecontrol_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+    <Parameter Name="iWhoToo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="dt_removefromsourcecontrol" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="dt_setpropertybyid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="value" Type="varchar" Mode="In" />
+    <Parameter Name="lvalue" Type="image" Mode="In" />
+  </Function>
+  <Function Name="dt_setpropertybyid_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="id" Type="int" Mode="In" />
+    <Parameter Name="property" Type="varchar" Mode="In" />
+    <Parameter Name="uvalue" Type="nvarchar" Mode="In" />
+    <Parameter Name="lvalue" Type="image" Mode="In" />
+  </Function>
+  <Function Name="dt_validateloginparams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_validateloginparams_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="dt_vcsenabled" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="dt_verstamp006" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="dt_whocheckedout" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="varchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="varchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="dt_whocheckedout_u" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="chObjectType" Type="char" Mode="In" />
+    <Parameter Name="vchObjectName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchLoginName" Type="nvarchar" Mode="In" />
+    <Parameter Name="vchPassword" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="fNumero2Letras" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+    <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GeneraMenu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoApls" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GeneraMenuCabecera" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoApls" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="GRLsp_LogInValidator" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="User" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Clave" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="mfCalculoIntDespVenc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric">
+    <Parameter Name="FechaReporte" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCargoFT" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaCargoFT" Type="datetime" Mode="In" />
+    <Parameter Name="NumCargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deudor" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaVencimiento" Type="datetime" Mode="In" />
+    <Parameter Name="LBalance" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="mfCalculoMora" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric">
+    <Parameter Name="FechaReporte" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCargoFT" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaCargoFT" Type="datetime" Mode="In" />
+    <Parameter Name="NumCargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Deudor" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="mfCalculoMoraOLD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="numeric">
+    <Parameter Name="FechaReporte" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCargoFT" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaCargoFT" Type="datetime" Mode="In" />
+    <Parameter Name="NumCargo" Type="nvarchar" Mode="In" />
+    <Parameter Name="LBalance" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="mfPlural" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
+    <Parameter Name="Unidad" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="mfRowsMayor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar(max)">
+    <Parameter Name="FechaMG" Type="datetime" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_ActualizaRecalculo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="CuotasOriginales" Type="nvarchar" Mode="In" />
+    <Parameter Name="BALANCE" Type="numeric" Mode="In" />
+    <Parameter Name="MontoPtm" Type="numeric" Mode="In" />
+    <Parameter Name="TasaInteres" Type="float" Mode="In" />
+    <Parameter Name="FechaContrato" Type="datetime" Mode="In" />
+    <Parameter Name="Fecha1raCuota" Type="datetime" Mode="In" />
+    <Parameter Name="NoCuotas" Type="int" Mode="In" />
+    <Parameter Name="NoCuotasOtros" Type="int" Mode="In" />
+    <Parameter Name="Vencimiento" Type="tinyint" Mode="In" />
+    <Parameter Name="AbsOIns" Type="tinyint" Mode="In" />
+    <Parameter Name="Frecuencia" Type="tinyint" Mode="In" />
+    <Parameter Name="TipoTabla" Type="tinyint" Mode="In" />
+    <Parameter Name="Inicial" Type="numeric" Mode="In" />
+    <Parameter Name="Traspaso" Type="numeric" Mode="In" />
+    <Parameter Name="Registro" Type="numeric" Mode="In" />
+    <Parameter Name="Seguro" Type="numeric" Mode="In" />
+    <Parameter Name="Exoneracion" Type="numeric" Mode="In" />
+    <Parameter Name="Legal" Type="numeric" Mode="In" />
+    <Parameter Name="Otros" Type="numeric" Mode="In" />
+    <Parameter Name="CuotasEspeciales" Type="tinyint" Mode="In" />
+    <Parameter Name="CantCuotasEspeciales" Type="int" Mode="In" />
+    <Parameter Name="str_CuotasEspeciales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="strValorCuotasEspeciales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Redondea" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_BalanceDocumentosALaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CONTRATO" Type="nvarchar" Mode="In" />
+    <Parameter Name="LCLIENTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="LDEUDOR" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHADESDE" Type="datetime" Mode="In" />
+    <Parameter Name="FECHAREPORTE" Type="datetime" Mode="In" />
+    <Parameter Name="MONEDA" Type="nvarchar" Mode="In" />
+    <Parameter Name="NoFactura" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHAPROYECCION" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="sp_BalanceInteresYComision" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="COBRADOR" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaConsulta" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_CNT_Parametros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_ConsultaCia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="Sp_ConsultaClienteCedORnc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CedulaORnc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteTable" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GeneraRelacionCobrador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="COBRADOR" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaConsulta" Type="date" Mode="In" />
+    <Parameter Name="EliminaRelacion" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_InsertGeneric" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Columns" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_ListadoDeRecibos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CLIENTE" Type="nvarchar" Mode="In" />
+    <Parameter Name="DEUDOR" Type="nvarchar" Mode="In" />
+    <Parameter Name="CONTRATO" Type="nvarchar" Mode="In" />
+    <Parameter Name="MONEDA" Type="nvarchar" Mode="In" />
+    <Parameter Name="NORECIBO" Type="nvarchar" Mode="In" />
+    <Parameter Name="NCFRECIBO" Type="nvarchar" Mode="In" />
+    <Parameter Name="FECHADESDE" Type="datetime" Mode="In" />
+    <Parameter Name="FECHAHASTA" Type="datetime" Mode="In" />
+    <Parameter Name="VIASF" Type="int" Mode="In" />
+    <Parameter Name="VIAIF" Type="int" Mode="In" />
+    <Parameter Name="RECIBIDODE" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHasta" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cuenta" Type="nvarchar" Mode="In" />
+    <Parameter Name="Auxiliar" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptBalanceAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHasta" Type="date" Mode="In" />
+    <Parameter Name="CuentaCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="Auxiliar" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptBalanza" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="MesCadena" Type="nvarchar" Mode="In" />
+    <Parameter Name="TableName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptContratosDelMes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDesde" Type="datetime" Mode="In" />
+    <Parameter Name="FechaHasta" Type="datetime" Mode="In" />
+    <Parameter Name="Cobrador" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptCuentas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaCuentas" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_RptDiarioGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDesde" Type="date" Mode="In" />
+    <Parameter Name="FechaHasta" Type="date" Mode="In" />
+    <Parameter Name="TipoDoc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptListadoCobroRealizado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDesde" Type="datetime" Mode="In" />
+    <Parameter Name="FechaHasta" Type="datetime" Mode="In" />
+    <Parameter Name="TipoMov" Type="int" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cobrador" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptMayorGeneral" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaMayor" Type="date" Mode="In" />
+    <Parameter Name="CuadrePrestamo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_RptMovAux" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDesde" Type="date" Mode="In" />
+    <Parameter Name="FechaHasta" Type="date" Mode="In" />
+    <Parameter Name="CuentaCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="Auxiliar" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptParametros" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptPestamosConBalance" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHasta" Type="datetime" Mode="In" />
+    <Parameter Name="Cobrador" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_RptUltimaCuotaContrato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Fecha" Type="datetime" Mode="In" />
+    <Parameter Name="Cobrador" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_SelectRelacionCobrador" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="COBRADOR" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaConsulta" Type="date" Mode="In" />
+  </Function>
+  <Function Name="sp_TemporalVencido" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaConsulta" Type="date" Mode="In" />
+    <Parameter Name="MostrarMora" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spActualizaMaestroClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="NomClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApeClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelefonosClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CelularClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CedRncClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpresaL" Type="nvarchar" Mode="In" />
+    <Parameter Name="E_mailClteApls" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spConcultarCedula_Rnc" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula_Rnc" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spConsultaAmortizacionParaPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaApls" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaContrato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaHistorico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Periodo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spConsultaMaestraCia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Columns" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="spConsultaMaestraConceptoRC" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestraOficialesCobrosPr" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestraPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestroAuxiliares" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestroBancos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestroClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaMaestroCuenta" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaReciboCodificado" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spConsultaTipoDocumento" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="spCrearTablaAmortizacion" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MontoPtm" Type="numeric" Mode="In" />
+    <Parameter Name="TasaInteres" Type="float" Mode="In" />
+    <Parameter Name="FechaContrato" Type="datetime" Mode="In" />
+    <Parameter Name="Fecha1raCuota" Type="datetime" Mode="In" />
+    <Parameter Name="NoCuotas" Type="int" Mode="In" />
+    <Parameter Name="NoCuotasOtros" Type="int" Mode="In" />
+    <Parameter Name="Vencimiento" Type="tinyint" Mode="In" />
+    <Parameter Name="AbsOIns" Type="tinyint" Mode="In" />
+    <Parameter Name="Frecuencia" Type="tinyint" Mode="In" />
+    <Parameter Name="TipoTabla" Type="tinyint" Mode="In" />
+    <Parameter Name="Inicial" Type="numeric" Mode="In" />
+    <Parameter Name="Traspaso" Type="numeric" Mode="In" />
+    <Parameter Name="Registro" Type="numeric" Mode="In" />
+    <Parameter Name="Seguro" Type="numeric" Mode="In" />
+    <Parameter Name="Exoneracion" Type="numeric" Mode="In" />
+    <Parameter Name="Legal" Type="numeric" Mode="In" />
+    <Parameter Name="Otros" Type="numeric" Mode="In" />
+    <Parameter Name="CuotasEspeciales" Type="tinyint" Mode="In" />
+    <Parameter Name="CantCuotasEspeciales" Type="int" Mode="In" />
+    <Parameter Name="str_CuotasEspeciales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="strValorCuotasEspeciales" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Redondea" Type="tinyint" Mode="In" />
+  </Function>
+  <Function Name="spEliminaCuotasPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminaMaestroClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CedulaRnc" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminaMaestroPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spEliminaPagosDePrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertaMaestroPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="TasaIntPtm" Type="float" Mode="In" />
+    <Parameter Name="MontoPtm" Type="numeric" Mode="In" />
+    <Parameter Name="CuotasPtm" Type="smallint" Mode="In" />
+    <Parameter Name="FrecuenciaCuotaPtm" Type="tinyint" Mode="In" />
+    <Parameter Name="TasaMoraPtm" Type="float" Mode="In" />
+    <Parameter Name="InteresPtm" Type="numeric" Mode="In" />
+    <Parameter Name="Cobrador" Type="nvarchar" Mode="In" />
+    <Parameter Name="NotaPtm" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertaMovimientoContrato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHoraReg" Type="datetime" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDocCont" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="MovDocCont" Type="tinyint" Mode="In" />
+    <Parameter Name="CodigoCobrador" Type="nvarchar" Mode="In" />
+    <Parameter Name="ValorPagoCapital" Type="numeric" Mode="In" />
+    <Parameter Name="ValorPagoInteres" Type="numeric" Mode="In" />
+    <Parameter Name="ValorpagoMora" Type="numeric" Mode="In" />
+    <Parameter Name="ValorPagoOtros" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="spInsertCuotasDePrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="CuotaNumPtm" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaVencCuota" Type="datetime" Mode="In" />
+    <Parameter Name="ValorCuotaCap" Type="decimal" Mode="In" />
+    <Parameter Name="ValorCuotaInt" Type="decimal" Mode="In" />
+    <Parameter Name="ValorCuotaOtros" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="spInsertMaestraCia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreClte" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApellidoClte" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CiudadCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="SectorCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaisCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="RncCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelefonosCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FaxCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="WebCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocalNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Consolidacion" Type="tinyint" Mode="In" />
+    <Parameter Name="Estatus" Type="tinyint" Mode="In" />
+    <Parameter Name="PagoConTarjeta" Type="tinyint" Mode="In" />
+    <Parameter Name="DiaDelPago" Type="int" Mode="In" />
+    <Parameter Name="FechaUltimoPago" Type="datetime" Mode="In" />
+    <Parameter Name="NombreTitularTarjeta" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumeroTarjeta" Type="nvarchar" Mode="In" />
+    <Parameter Name="Expira" Type="nvarchar" Mode="In" />
+    <Parameter Name="CVV" Type="int" Mode="In" />
+    <Parameter Name="Direccion1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ciudad" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoPostal" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pais" Type="nvarchar" Mode="In" />
+    <Parameter Name="ver" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="spInsertMaestraClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="NomClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApeClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelefonosClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CelularClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CedRncClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpresaL" Type="nvarchar" Mode="In" />
+    <Parameter Name="E_mailClteApls" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spInsertMovimientoContrato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="TipoDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoCobrador" Type="nvarchar" Mode="In" />
+    <Parameter Name="ValorPagoCapital" Type="numeric" Mode="In" />
+    <Parameter Name="ValorPagoInteres" Type="numeric" Mode="In" />
+    <Parameter Name="ValorpagoMora" Type="numeric" Mode="In" />
+    <Parameter Name="ValorPagoOtros" Type="numeric" Mode="In" />
+  </Function>
+  <Function Name="spInsertPagosDePrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDocCont" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="MovDocCont" Type="tinyint" Mode="In" />
+    <Parameter Name="CodigoCobrador" Type="nvarchar" Mode="In" />
+    <Parameter Name="ValorPagoCapital" Type="decimal" Mode="In" />
+    <Parameter Name="ValorPagoInteres" Type="decimal" Mode="In" />
+    <Parameter Name="ValorpagoMora" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="spRegistrarCompañia" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaHoraReg" Type="datetime" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="NombreClte" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApellidoClte" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionCia" Type="ntext" Mode="In" />
+    <Parameter Name="CiudadCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="SectorCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="PaisCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="RncCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelefonosCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FaxCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmailCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="WebCia" Type="nvarchar" Mode="In" />
+    <Parameter Name="LocalNo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Consolidacion" Type="tinyint" Mode="In" />
+    <Parameter Name="Estatus" Type="tinyint" Mode="In" />
+    <Parameter Name="PagoConTarjeta" Type="tinyint" Mode="In" />
+    <Parameter Name="DiaDelPago" Type="int" Mode="In" />
+    <Parameter Name="FechaUltimoPago" Type="date" Mode="In" />
+    <Parameter Name="NombreTitularTarjeta" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumeroTarjeta" Type="nvarchar" Mode="In" />
+    <Parameter Name="Expira" Type="nvarchar" Mode="In" />
+    <Parameter Name="CVV" Type="int" Mode="In" />
+    <Parameter Name="Direccion1" Type="nvarchar" Mode="In" />
+    <Parameter Name="Direccion2" Type="nvarchar" Mode="In" />
+    <Parameter Name="Ciudad" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoPostal" Type="nvarchar" Mode="In" />
+    <Parameter Name="Pais" Type="nvarchar" Mode="In" />
+    <Parameter Name="Servidor" Type="nvarchar" Mode="In" />
+    <Parameter Name="Instancia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectConsultaContrato" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectCuotasPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectInfoClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CedRncCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectMaestroClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectMaestroPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectMovimientoContratos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spSelectPagosDePrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaConsulta" Type="date" Mode="In" />
+  </Function>
+  <Function Name="spUpdateCuotasDePrestamo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="CuotaNumPtm" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaVencCuota" Type="datetime" Mode="In" />
+    <Parameter Name="ValorCuotaCap" Type="decimal" Mode="In" />
+    <Parameter Name="ValorCuotaInt" Type="decimal" Mode="In" />
+    <Parameter Name="ValorCuotaOtros" Type="decimal" Mode="In" />
+  </Function>
+  <Function Name="spUpdateMaestroClientes" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="NomClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="ApeClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="DireccionClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="TelefonosClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CelularClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="CedRncClteApls" Type="nvarchar" Mode="In" />
+    <Parameter Name="EmpresaL" Type="nvarchar" Mode="In" />
+    <Parameter Name="E_mailClteApls" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateMaestroPrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Cedula" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="CodigoCliente" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="Contrato" Type="int" Mode="In" />
+    <Parameter Name="TasaIntPtm" Type="numeric" Mode="In" />
+    <Parameter Name="MontoPtm" Type="numeric" Mode="In" />
+    <Parameter Name="CuotasPtm" Type="int" Mode="In" />
+    <Parameter Name="FrecuenciaCuotaPtm" Type="bit" Mode="In" />
+    <Parameter Name="TasaMoraPtm" Type="numeric" Mode="In" />
+    <Parameter Name="InteresPtm" Type="numeric" Mode="In" />
+    <Parameter Name="Cobrador" Type="int" Mode="In" />
+    <Parameter Name="NotaPtm" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spUpdatePagosDePrestamos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Contrato" Type="nvarchar" Mode="In" />
+    <Parameter Name="Cia" Type="nvarchar" Mode="In" />
+    <Parameter Name="Usuario" Type="nvarchar" Mode="In" />
+    <Parameter Name="FechaDocCont" Type="datetime" Mode="In" />
+    <Parameter Name="TipoDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="NumDocCont" Type="nvarchar" Mode="In" />
+    <Parameter Name="MovDocCont" Type="tinyint" Mode="In" />
+    <Parameter Name="CodigoCobrador" Type="nvarchar" Mode="In" />
+    <Parameter Name="ValorPagoCapital" Type="decimal" Mode="In" />
+    <Parameter Name="ValorPagoInteres" Type="decimal" Mode="In" />
+    <Parameter Name="ValorpagoMora" Type="decimal" Mode="In" />
+  </Function>
+  <EntityContainer Name="TransaccionesModelStoreContainer">
+    <EntitySet Name="AUX_MaestroAuxiliares" EntityType="Self.AUX_MaestroAuxiliares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AUX_MovimientosAuxiliares" EntityType="Self.AUX_MovimientosAuxiliares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CNT_MaestroCuenta" EntityType="Self.CNT_MaestroCuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CNT_MaestroPresupuestoContabilidad" EntityType="Self.CNT_MaestroPresupuestoContabilidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CNT_MovimientosContabilidad" EntityType="Self.CNT_MovimientosContabilidad" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CNT_Parametros" EntityType="Self.CNT_Parametros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CNT_ResumenDocumentos" EntityType="Self.CNT_ResumenDocumentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_MaestroClientes" EntityType="Self.GRL_MaestroClientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_NCFNULO" EntityType="Self.GRL_NCFNULO" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_NumeroDeTransaccion" EntityType="Self.GRL_NumeroDeTransaccion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_Parametros" EntityType="Self.GRL_Parametros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_RenglonDeProducto" EntityType="Self.GRL_RenglonDeProducto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GRL_TipoDocumento" EntityType="Self.GRL_TipoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HST_MaestroCuenta" EntityType="Self.HST_MaestroCuenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaestraConceptoRC" EntityType="Self.MaestraConceptoRC" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MaestroRc" EntityType="Self.MaestroRc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_CiasConsolidadas" EntityType="Self.PTC_CiasConsolidadas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_CobrosRealizadosOffline" EntityType="Self.PTC_CobrosRealizadosOffline" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_CuotasDePrestamo" EntityType="Self.PTC_CuotasDePrestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_CuotasDePrestamoRen" EntityType="Self.PTC_CuotasDePrestamoRen" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_FechaRecordatorioDePago" EntityType="Self.PTC_FechaRecordatorioDePago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestraOficialesCobrosPr" EntityType="Self.PTC_MaestraOficialesCobrosPr" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroAplicaciones" EntityType="Self.PTC_MaestroAplicaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroClasificacionPgms" EntityType="Self.PTC_MaestroClasificacionPgms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroClientes" EntityType="Self.PTC_MaestroClientes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroPgms" EntityType="Self.PTC_MaestroPgms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroPrestamos" EntityType="Self.PTC_MaestroPrestamos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MaestroUsuarios" EntityType="Self.PTC_MaestroUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_MovimientosRelacionCobradores" EntityType="Self.PTC_MovimientosRelacionCobradores" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_PagosDePrestamo" EntityType="Self.PTC_PagosDePrestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_ProgramasPorUsuarios" EntityType="Self.PTC_ProgramasPorUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_rptCalculoMoraPrestamo" EntityType="Self.PTC_rptCalculoMoraPrestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_rptCuotasVencidasYNoSaldadas" EntityType="Self.PTC_rptCuotasVencidasYNoSaldadas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_rptListaMovimientosPrestamo" EntityType="Self.PTC_rptListaMovimientosPrestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_rptMovimientosPrestamo" EntityType="Self.PTC_rptMovimientosPrestamo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_rptTasaRendimiento" EntityType="Self.PTC_rptTasaRendimiento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_SecuenciaPrestamos" EntityType="Self.PTC_SecuenciaPrestamos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_TipoDocumento" EntityType="Self.PTC_TipoDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PTC_tmpReporteInteresComision" EntityType="Self.PTC_tmpReporteInteresComision" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReciboCodificado" EntityType="Self.ReciboCodificado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEG_AplicacionePorCompanias" EntityType="Self.SEG_AplicacionePorCompanias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seg_MaestroAplicaciones" EntityType="Self.Seg_MaestroAplicaciones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SEG_MaestroCias" EntityType="Self.SEG_MaestroCias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seg_MaestroUsuarios" EntityType="Self.Seg_MaestroUsuarios" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Copia_PTC_ProgramasPorUsuarios" EntityType="Self.Copia_PTC_ProgramasPorUsuarios" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Copia_PTC_ProgramasPorUsuarios].[Cia] AS [Cia], 
+    [Copia_PTC_ProgramasPorUsuarios].[FechaHoraReg] AS [FechaHoraReg], 
+    [Copia_PTC_ProgramasPorUsuarios].[Usuario] AS [Usuario], 
+    [Copia_PTC_ProgramasPorUsuarios].[IdentificacionUsr] AS [IdentificacionUsr], 
+    [Copia_PTC_ProgramasPorUsuarios].[CodigoApls] AS [CodigoApls], 
+    [Copia_PTC_ProgramasPorUsuarios].[NombreFrm] AS [NombreFrm], 
+    [Copia_PTC_ProgramasPorUsuarios].[TodoTipoAccesUsrpgms] AS [TodoTipoAccesUsrpgms], 
+    [Copia_PTC_ProgramasPorUsuarios].[EscribirUsrpgms] AS [EscribirUsrpgms], 
+    [Copia_PTC_ProgramasPorUsuarios].[LeerUsrpgms] AS [LeerUsrpgms], 
+    [Copia_PTC_ProgramasPorUsuarios].[ModificarUsrpgms] AS [ModificarUsrpgms], 
+    [Copia_PTC_ProgramasPorUsuarios].[EliminarUsrpgms] AS [EliminarUsrpgms]
+    FROM [dbo].[Copia_PTC_ProgramasPorUsuarios] AS [Copia_PTC_ProgramasPorUsuarios]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="copiaMM" EntityType="Self.copiaMM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [copiaMM].[Cia] AS [Cia], 
+    [copiaMM].[FechaHoraReg] AS [FechaHoraReg], 
+    [copiaMM].[Usuario] AS [Usuario], 
+    [copiaMM].[NombreFrm] AS [NombreFrm], 
+    [copiaMM].[CodigoApls] AS [CodigoApls], 
+    [copiaMM].[CodigoTipoPgm] AS [CodigoTipoPgm], 
+    [copiaMM].[OrdenDelFrmEnApls] AS [OrdenDelFrmEnApls], 
+    [copiaMM].[DescripcionFrm] AS [DescripcionFrm], 
+    [copiaMM].[DescripcionCompletaFrm] AS [DescripcionCompletaFrm], 
+    [copiaMM].[Grupo] AS [Grupo], 
+    [copiaMM].[Url] AS [Url]
+    FROM [dbo].[copiaMM] AS [copiaMM]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="GRL_TIPODOCUMENTO_COPIA" EntityType="Self.GRL_TIPODOCUMENTO_COPIA" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [GRL_TIPODOCUMENTO_COPIA].[Cia] AS [Cia], 
+    [GRL_TIPODOCUMENTO_COPIA].[FechaHoraReg] AS [FechaHoraReg], 
+    [GRL_TIPODOCUMENTO_COPIA].[Usuario] AS [Usuario], 
+    [GRL_TIPODOCUMENTO_COPIA].[IDTipoDoc] AS [IDTipoDoc], 
+    [GRL_TIPODOCUMENTO_COPIA].[Descripcion] AS [Descripcion], 
+    [GRL_TIPODOCUMENTO_COPIA].[NCF] AS [NCF], 
+    [GRL_TIPODOCUMENTO_COPIA].[SecuenciaNCF] AS [SecuenciaNCF], 
+    [GRL_TIPODOCUMENTO_COPIA].[Secuencia] AS [Secuencia], 
+    [GRL_TIPODOCUMENTO_COPIA].[PreSecuencia] AS [PreSecuencia], 
+    [GRL_TIPODOCUMENTO_COPIA].[SiCargo] AS [SiCargo], 
+    [GRL_TIPODOCUMENTO_COPIA].[Almacen] AS [Almacen]
+    FROM [dbo].[GRL_TIPODOCUMENTO_COPIA] AS [GRL_TIPODOCUMENTO_COPIA]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="MaestraNCF" EntityType="Self.MaestraNCF" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MaestraNCF].[Cia] AS [Cia], 
+    [MaestraNCF].[FechaHoraReg] AS [FechaHoraReg], 
+    [MaestraNCF].[Usuario] AS [Usuario], 
+    [MaestraNCF].[TipoDoc] AS [TipoDoc], 
+    [MaestraNCF].[NCF] AS [NCF], 
+    [MaestraNCF].[OrdenNCF] AS [OrdenNCF], 
+    [MaestraNCF].[DescripcionNCF] AS [DescripcionNCF], 
+    [MaestraNCF].[Minimo] AS [Minimo], 
+    [MaestraNCF].[Maximo] AS [Maximo], 
+    [MaestraNCF].[Secuencia] AS [Secuencia], 
+    [MaestraNCF].[Activo] AS [Activo]
+    FROM [dbo].[MaestraNCF] AS [MaestraNCF]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Prueba" EntityType="Self.Prueba" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Prueba].[codigo] AS [codigo], 
+    [Prueba].[nombre] AS [nombre]
+    FROM [dbo].[Prueba] AS [Prueba]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PTC_MaestroCias" EntityType="Self.PTC_MaestroCias" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PTC_MaestroCias].[CodigoCia] AS [CodigoCia], 
+    [PTC_MaestroCias].[FechaHoraReg] AS [FechaHoraReg], 
+    [PTC_MaestroCias].[Usuario] AS [Usuario], 
+    [PTC_MaestroCias].[NombreCia] AS [NombreCia], 
+    [PTC_MaestroCias].[NombreClte] AS [NombreClte], 
+    [PTC_MaestroCias].[ApellidoClte] AS [ApellidoClte], 
+    [PTC_MaestroCias].[DireccionCia] AS [DireccionCia], 
+    [PTC_MaestroCias].[CiudadCia] AS [CiudadCia], 
+    [PTC_MaestroCias].[SectorCia] AS [SectorCia], 
+    [PTC_MaestroCias].[PaisCia] AS [PaisCia], 
+    [PTC_MaestroCias].[ProvinciaCia] AS [ProvinciaCia], 
+    [PTC_MaestroCias].[RncCia] AS [RncCia], 
+    [PTC_MaestroCias].[RegistroMercantilCia] AS [RegistroMercantilCia], 
+    [PTC_MaestroCias].[TelefonosCia] AS [TelefonosCia], 
+    [PTC_MaestroCias].[FaxCia] AS [FaxCia], 
+    [PTC_MaestroCias].[EmailCia] AS [EmailCia], 
+    [PTC_MaestroCias].[WebCia] AS [WebCia], 
+    [PTC_MaestroCias].[LocalNo] AS [LocalNo], 
+    [PTC_MaestroCias].[Consolidacion] AS [Consolidacion], 
+    [PTC_MaestroCias].[LogoCia] AS [LogoCia]
+    FROM [dbo].[PTC_MaestroCias] AS [PTC_MaestroCias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="PTC_MaestroPgms1" EntityType="Self.PTC_MaestroPgms1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [PTC_MaestroPgms1].[Cia] AS [Cia], 
+    [PTC_MaestroPgms1].[FechaHoraReg] AS [FechaHoraReg], 
+    [PTC_MaestroPgms1].[Usuario] AS [Usuario], 
+    [PTC_MaestroPgms1].[NombreFrm] AS [NombreFrm], 
+    [PTC_MaestroPgms1].[CodigoApls] AS [CodigoApls], 
+    [PTC_MaestroPgms1].[CodigoTipoPgm] AS [CodigoTipoPgm], 
+    [PTC_MaestroPgms1].[OrdenDelFrmEnApls] AS [OrdenDelFrmEnApls], 
+    [PTC_MaestroPgms1].[DescripcionFrm] AS [DescripcionFrm], 
+    [PTC_MaestroPgms1].[DescripcionCompletaFrm] AS [DescripcionCompletaFrm], 
+    [PTC_MaestroPgms1].[Grupo] AS [Grupo], 
+    [PTC_MaestroPgms1].[Url] AS [Url]
+    FROM [dbo].[PTC_MaestroPgms1] AS [PTC_MaestroPgms1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SEG_MaestroCias1" EntityType="Self.SEG_MaestroCias1" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SEG_MaestroCias1].[Cia] AS [Cia], 
+    [SEG_MaestroCias1].[FechaHoraReg] AS [FechaHoraReg], 
+    [SEG_MaestroCias1].[Usuario] AS [Usuario], 
+    [SEG_MaestroCias1].[NombreCia] AS [NombreCia], 
+    [SEG_MaestroCias1].[NombreClte] AS [NombreClte], 
+    [SEG_MaestroCias1].[ApellidoClte] AS [ApellidoClte], 
+    [SEG_MaestroCias1].[DireccionCia] AS [DireccionCia], 
+    [SEG_MaestroCias1].[CiudadCia] AS [CiudadCia], 
+    [SEG_MaestroCias1].[SectorCia] AS [SectorCia], 
+    [SEG_MaestroCias1].[PaisCia] AS [PaisCia], 
+    [SEG_MaestroCias1].[RncCia] AS [RncCia], 
+    [SEG_MaestroCias1].[TelefonosCia] AS [TelefonosCia], 
+    [SEG_MaestroCias1].[FaxCia] AS [FaxCia], 
+    [SEG_MaestroCias1].[EmailCia] AS [EmailCia], 
+    [SEG_MaestroCias1].[WebCia] AS [WebCia], 
+    [SEG_MaestroCias1].[LocalNo] AS [LocalNo], 
+    [SEG_MaestroCias1].[Consolidacion] AS [Consolidacion], 
+    [SEG_MaestroCias1].[Estatus] AS [Estatus], 
+    [SEG_MaestroCias1].[PagoConTarjeta] AS [PagoConTarjeta], 
+    [SEG_MaestroCias1].[DiaDelPago] AS [DiaDelPago], 
+    [SEG_MaestroCias1].[FechaUltimoPago] AS [FechaUltimoPago], 
+    [SEG_MaestroCias1].[NombreTitularTarjeta] AS [NombreTitularTarjeta], 
+    [SEG_MaestroCias1].[NumeroTarjeta] AS [NumeroTarjeta], 
+    [SEG_MaestroCias1].[Expira] AS [Expira], 
+    [SEG_MaestroCias1].[CVV] AS [CVV], 
+    [SEG_MaestroCias1].[Direccion1] AS [Direccion1], 
+    [SEG_MaestroCias1].[Direccion2] AS [Direccion2], 
+    [SEG_MaestroCias1].[Ciudad] AS [Ciudad], 
+    [SEG_MaestroCias1].[CodigoPostal] AS [CodigoPostal], 
+    [SEG_MaestroCias1].[Pais] AS [Pais], 
+    [SEG_MaestroCias1].[Servidor] AS [Servidor], 
+    [SEG_MaestroCias1].[Instancia] AS [Instancia]
+    FROM [dbo].[SEG_MaestroCias1] AS [SEG_MaestroCias1]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

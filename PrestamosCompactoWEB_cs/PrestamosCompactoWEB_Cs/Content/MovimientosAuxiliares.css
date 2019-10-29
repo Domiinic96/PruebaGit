@@ -1,0 +1,71 @@
+﻿fbody{
+    font-family:Courier New, Courier, monospace;
+}
+table{
+    font-family:Courier New, Courier, monospace;
+    width:100%;
+    font-size:10px;
+}
+th{
+    height:14px;
+    font-weight:700;
+    border-bottom-width:1px;
+}
+td{
+    height:14px;
+    font-family:Courier New, Courier, monospace;
+}
+.centro {
+    text-align:center;
+}
+.dvalor{
+    text-align:right;
+    width:6.5%;
+}
+.dfecha{
+    width:11%;
+}
+.ddoc{
+    width:11%;
+}
+.dcuenta{
+    width:11%;
+}
+.dobserv{
+    width:30%;
+}
+.expadin{
+    height:27.5px;
+}
+.negrita{
+    font-weight:700;
+}
+
+.Derecha  {
+  text-align:right;
+}
+
+.total {
+    border-top-width:1px;
+}
+.Colspan{
+    width:30%
+}
+.Tdoc{
+    width:40%;
+}
+.Jdoc{
+   width:-10px
+}
+
+.ValorN{
+   
+    letter-spacing: -1px;
+
+}
+
+/*.dvalor1{
+    text-align:right;
+    width:10%;
+    height:26.1px;
+}*/

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<PruebaParagit.Models.GeneraMenu_Result>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<table class="table page-header">
+    <thead>
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                tipo
+            </th>
+            <th>
+                descripcion
+            </th>
+        </tr>
+    </thead>
+    <tbody class="body-content">
+        @foreach (var item in ViewBag.lista)
+        {
+            <tr>
+                <td>
+                    @item.CodigoApls
+                </td>
+                <td>
+                    @item.CodigoTipoPgm
+                </td>
+                <td>
+                    @item.DescripcionTipoPgm
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+
+<table class="table page-header">
+    <thead>
+        <tr>
+            <th>
+                expandir
+            </th>
+            <th>
+                Codigo
+            </th>
+            <th>
+                tipo
+            </th>
+            <th>
+                descripcion
+            </th>
+        </tr>
+    </thead>
+    <tbody class="body-content">
+        @foreach (var item in ViewBag.lista2)
+        {
+            <tr>
+                <td>
+                    <a id="klk" class="btn glyphicon glyphicon-plus"></a>
+                </td>
+                <td>
+                    @item.CodigoApls
+                </td>
+                <td>
+                    @item.CodigoTipoPgm
+                </td>
+                <td>
+                    @item.DescripcionTipoPgm
+                </td>
+                <td>
+                    @item.DescripcionCompletaFrm
+                </td>
+                <td>
+                    @item.Grupo
+                </td>
+                <td>
+                    @item.Url
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

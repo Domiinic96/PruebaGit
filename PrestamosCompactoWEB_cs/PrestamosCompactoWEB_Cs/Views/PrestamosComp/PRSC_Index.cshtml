@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Inicio";
+}
+
+<style>
+    .Post1 {
+        position: absolute;
+        left: 275px;
+        top: 11px;
+    }
+
+    .Post2 {
+        position: absolute;
+        left: 340px;
+        top: 5px;
+    }
+
+    .Post3 {
+        position: absolute;
+        left: 645px;
+        top: 11px;
+    }
+
+    .Post4 {
+        position: absolute;
+        left: 700px;
+        top: 5px;
+    }
+
+    .Post5 {
+        position: absolute;
+        left: 964px;
+        top: 11px;
+    }
+
+    .Post6 {
+        position: absolute;
+        left: 1020px;
+        top: 5px;
+    }
+
+    .Divpo {
+        position: absolute;
+        top: 10px;
+    }
+
+    .Divpos {
+        position: absolute;
+        left: 10px;
+        top: 35px;
+    }
+
+    body{
+       overflow-x:hidden;
+    }
+</style>
+
+@*@Html.Label("Empresa", htmlAttributes: new {@class = " control-label Post1 ", @Style = "Color:#36C197"})
+<input type="text" value="@Session["NombreCia"]" class="form-control Post2" style="width:270px" disabled="disabled" />
+
+
+@Html.Label("Módulo", htmlAttributes: new {@class = " control-label Post3 ", @Style = "Color:#36C197"})
+<select name="Módulo" class="form-control Post4" style="width:240px " onchange="if(this.selectedIndex!=0)self.location=this.options[this.selectedIndex].value">
+    <option value="Contabilidad"> Contabilidad</option>
+    <option value="http://localhost:62682/Inventario/Index">Inventario</option>
+    <option value="http://localhost:62682/Asistencia/Index">Asistencia</option>
+
+</select>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@Html.Label("Usuario", htmlAttributes: new {@class = " control-label Post5", @Style = "Color:#36C197"})
+<input type="text" value="@Session["Cliente"]" class="form-control Post6" style="width:240px" disabled="disabled" />*@
+<h1 style="font-family:Vivaldi; color:#534e35; font-size:60PX ">Bienvenido!</h1>

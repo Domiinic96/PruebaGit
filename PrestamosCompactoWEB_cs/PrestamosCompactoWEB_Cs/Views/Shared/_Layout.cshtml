@@ -1,0 +1,174 @@
+﻿
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    @*<meta charset="utf-8" />*@
+    <meta name="viewport">
+    <title>Préstamos Compacto</title>
+    <link type="image/x-icon" href="~/Content/Images/logo.png" rel="shortcut icon" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery-ui.min.js"></script>
+    <link href="~/Content/jquery-ui.structure.min.css" rel="stylesheet" />
+
+    <style>
+
+        li:hover {
+            /*background: red;*/
+        }
+
+        A:visited {
+            background: red;
+        }
+
+        A:hover {
+            font-size: 16px;
+            border-radius: 25px;
+            cursor: pointer;
+            background: white;
+            border-color: white;
+        }
+
+        li.dropdown open > li {
+            background: red;
+        }
+
+        .dropdown open > li {
+            background: red;
+        }
+
+
+        .dropdown-toggle-active {
+            /*background: red;*/
+        }
+
+        .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+            /*background: red;*/
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <div style="position:absolute">
+
+        @if (Convert.ToString(Session["Menu"]) == "2")
+        {
+            <div Class="navbar navbar-inverse navbar-fixed-top" style="background-color:#36C187;height:78px">
+                <div Class="...">
+                    <div Class="navbar-header">
+
+                        <IMG SRC="~/Content/Images/Sin título-2.png" Class="navbar-brand" style="height:75px; padding:0; margin-right:-10px;margin-top:1px" />
+                    </div>
+                </div>
+            </div>
+            <p onmouseover="this.style.color='black'">
+                @Html.Partial("_LoginPartial")
+
+            </p>
+        }
+
+        @if (Convert.ToString(Session["Men"]) == "1")
+        {
+            <div Class="navbar navbar-inverse navbar-fixed-top " style="background-color:#36C187;height:78px;position:static;width:1280px;position:absolute;">
+                <div class="...">
+                    <div class="navbar-header">
+
+                        <div>
+                            <ul Class="nav navbar-nav" role="menu">
+
+                                @foreach (var i in (Session["cabecera"] as List<PrestamosCompactoWEB_Cs.Models.MenuCabecera>))
+                                {
+                                    if (Convert.ToInt16(i.CodigoTipoPgm) == 1)
+                                    {
+                                        if (Convert.ToInt16(i.CodigoTipoPgm.Count()) > 0)
+                                        {
+                                            <li Class="dropdown" style="padding:5.2% 0% 0% 0">
+                                                <a Class="" data-toggle="dropdown"><b style="color:white;  border-radius:5px;">@i.DescripcionTipoPgm</b><b class="caret" style="color:white;"></b></a>
+                                                <ul Class="navbar-btn nav dropdown-menu" role="menu" onclick="this.style.background='white'" style="background-color:#36C187;margin:1.5px 1.5px 5px 0-1px;  border-radius:5px;">
+                                                    @foreach (var item1 in (Session["actualizaciones"] as List<PrestamosCompactoWEB_Cs.Models.MenuDinamico>))
+                                                    {
+                                                        if (Convert.ToInt32(item1.CodigoTipoPgm.Count()) > 0)
+                                                        {
+                                                            <li> <a href="@item1.Url" style="color:#F9F9F9;border-radius:10px;" onmouseover="this.style.color='Black'" onmouseout="this.style.color='White'"><b>@item1.NombreFrm</b></a></li>
+                                                        }
+                                                    }
+                                                </ul>
+                                            </li>
+                                        }
+                                    }
+                                    else if (Convert.ToInt16(i.CodigoTipoPgm) == 2)
+                                    {
+                                        if (Convert.ToInt16(i.CodigoTipoPgm.Count()) > 0)
+                                        {
+                                            <li class="dropdown" style="padding:5.2% 0% 0% 0">
+                                                <a Class="" data-toggle="dropdown"><b style="color:white;">@i.DescripcionTipoPgm</b><b class="caret"></b></a>
+                                                <ul Class="navbar-btn nav dropdown-menu" role="menu" onclick="this.style.background='#36c187'" style="background-color:#36c187;margin:1.5px 1.5px 5px 0-1px; border-radius:10px;">
+
+                                                    @foreach (var item2 in (Session["consultas"] as List<PrestamosCompactoWEB_Cs.Models.MenuDinamico>))
+                                                    {
+                                                        <li> <a href="@item2.Url" style="color:#F9F9F9;border-radius:10px;" onmouseover="this.style.color = 'Black'" onmouseout="this.style.color='White'"><b>@item2.DescripcionFrm</b></a></li>
+                                                    }
+                                                </ul>
+                                            </li>
+                                        }
+                                    }
+                                    else if (Convert.ToInt16(i.CodigoTipoPgm) == 3)
+                                    {
+                                        if (Convert.ToInt16(i.CodigoTipoPgm.Count()) > 0)
+                                        {
+                                            <li class="dropdown" style="padding:5.2% 0% 0% 0">
+                                                <a Class="" data-toggle="dropdown"><b style="color:white;">@i.DescripcionTipoPgm</b><b class="caret"></b></a>
+                                                <ul Class="navbar-btn nav dropdown-menu" role="menu" style="background-color:#36c187;margin:1.5px 1.5px 5px 0-1px; border-radius:10px;">
+
+                                                    @foreach (var item3 in (Session["reportes"] as List<PrestamosCompactoWEB_Cs.Models.MenuDinamico>))
+                                                    {
+                                                        <li> <a href="@item3.Url" style="color:#F9F9F9; border-radius:10px;" onmouseover="this.style.color='Black'" onmouseout="this.style.color='White'"><b>@item3.DescripcionFrm</b></a></li>
+                                                    }
+                                                </ul>
+                                            </li>
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        @*<p onmouseover="this.style.color='black'" style="margin-top:5%">
+                                @Html.Partial("_LoginPartial")
+
+                            </p>*@
+
+                    </div>
+                    <p onmouseover="this.style.color='black'" @*style="margin-top:7%"*@>
+                        @Html.Partial("_LoginPartial")
+
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="container body-content">
+        @RenderBody()
+
+
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>
+
+
+

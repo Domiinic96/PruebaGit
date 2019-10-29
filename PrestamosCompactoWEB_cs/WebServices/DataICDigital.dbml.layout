@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 35.625" name="DataICDigital">
+  <DataContextMoniker Name="/DataICDigitalDataContext" />
+  <nestedChildShapes>
+    <classShape Id="be7c295e-aa72-4362-9db0-25a85b5fe27e" absoluteBounds="0.5, 1, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataICDigitalDataContext/Seg_MaestroAplicaciones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1477dbdf-a74b-427a-89fd-5589af0c33dc" absoluteBounds="0.51500000000000012, 1.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="00ee28e0-a540-4891-8911-437fb792b7f8" absoluteBounds="0.5, 3.25, 2, 6.5784326171875">
+      <DataClassMoniker Name="/DataICDigitalDataContext/SEG_MaestroCias" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8237334b-2748-4eca-b516-d4bfa15f62a4" absoluteBounds="0.51500000000000012, 3.71, 1.9700000000000002, 6.0184326171875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="574fa1a5-b9a5-434a-8b39-e3b2895298b3" absoluteBounds="2.75, 0.875, 2, 2.9247054036458331">
+      <DataClassMoniker Name="/DataICDigitalDataContext/Seg_MaestroUsuarios" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82ee9fb9-7cc6-4d08-973c-c8c8b1370ce1" absoluteBounds="2.765, 1.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dedfbf3a-6799-4b02-b11b-f6a34cce7392" absoluteBounds="5, 0.875, 2, 34.462140299479167">
+      <DataClassMoniker Name="/DataICDigitalDataContext/GRL_MaestroClientes" />
+      <nestedChildShapes>
+        <elementListCompartment Id="257b8cf8-6684-4ac9-b119-680b7cd9cca6" absoluteBounds="5.015, 1.335, 1.9700000000000002, 33.902140299479164" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d0a299c1-7094-476e-831c-927b19f5fcd4" absoluteBounds="2.75, 4.125, 2, 9.8475569661458326">
+      <DataClassMoniker Name="/DataICDigitalDataContext/PTC_MaestroPrestamos" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95083f09-98ec-4f60-b631-4f81317bb1fb" absoluteBounds="2.765, 4.585, 1.9700000000000002, 9.2875569661458321" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="23a5c2dc-3512-4293-975d-53fa239749a7" absoluteBounds="0.5, 2.75, 2, 5.0400211588541657">
+      <DataClassMoniker Name="/DataICDigitalDataContext/PTC_PagosDePrestamo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cd200ff3-cb99-4ac5-92df-695bc657d370" absoluteBounds="0.515, 3.21, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

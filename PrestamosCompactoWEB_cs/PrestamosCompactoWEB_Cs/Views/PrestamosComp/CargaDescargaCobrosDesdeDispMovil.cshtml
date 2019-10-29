@@ -1,0 +1,883 @@
+﻿@model PrestamosCompactoWEB_Cs.Models.CargaDescargaCobrosDesdeDispMovil
+
+@{
+    ViewBag.Title = "Carga/Descarga Cobros Desde Disp. Movil";
+}
+
+<style>
+    .block {
+        display: block;
+    }
+
+    .inline {
+        display: inline-block;
+    }
+
+    .sizedoc {
+        width: 150px;
+    }
+
+    .textarea {
+        width: 50px;
+    }
+
+    .Sizedocc {
+        height: 75px;
+        max-width: 610px;
+    }
+
+    .Pos {
+        position: absolute;
+        left: 55px;
+        top: 145px;
+    }
+
+    .Pos2 {
+        position: absolute;
+        left: 60px;
+        top: 200px;
+    }
+
+    .Pos3 {
+        position: absolute;
+        left: 144px;
+        top: 195px;
+    }
+
+    .Pos4 {
+        position: absolute;
+        left: 270px;
+        top: 195px;
+    }
+
+    .Pos5 {
+        position: absolute;
+        left: 330px;
+        top: 200px;
+    }
+
+    .Pos6 {
+        position: absolute;
+        left: 380px;
+        top: 195px;
+    }
+
+    .Pos7 {
+        position: absolute;
+        left: 70px;
+        top: 240px;
+    }
+
+
+
+    .Pos8 {
+        position: absolute;
+        left: 143px;
+        top: 238px;
+    }
+
+    .Pos9 {
+        position: absolute;
+        left: 560px;
+        top: 245px;
+    }
+
+    .Pos10 {
+        position: absolute;
+        left: 603px;
+        top: 240px;
+    }
+
+    .Pos11 {
+        position: absolute;
+        left: 70px;
+        top: 290px;
+    }
+
+    .Pos12 {
+        position: absolute;
+        left: 143px;
+        top: 285px;
+    }
+
+    .Pos15 {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+
+    .Pos16 {
+        position: absolute;
+        left: 30px;
+        top: 5px;
+    }
+
+    .Pos17 {
+        position: absolute;
+        left: 105px;
+        top: 5px;
+    }
+
+    .Pos18 {
+        position: absolute;
+        left: 110px;
+        top: 5px;
+    }
+
+    .Pos19 {
+        position: absolute;
+        left: -85px;
+        top: 5px;
+    }
+
+
+
+    .Pos20 {
+        position: absolute;
+        left: 70px;
+        top: 375px;
+    }
+
+    .Pos21 {
+        position: absolute;
+        left: 143px;
+        top: 370px;
+    }
+
+    .Pos22 {
+        position: absolute;
+        left: 35px;
+        top: 423px;
+    }
+
+    .Pos23 {
+        position: absolute;
+        left: 143px;
+        top: 415px;
+    }
+
+    .Pos24 {
+        position: absolute;
+        left: 70px;
+        top: 455px;
+    }
+
+    .Pos25 {
+        position: absolute;
+        left: 360px;
+        top: 415px;
+    }
+
+    .Pos26 {
+        position: absolute;
+        left: 395px;
+        top: 365px;
+    }
+
+    .Pos27 {
+        position: absolute;
+        left: 300px;
+        top: 550px;
+    }
+
+    .Pos28 {
+        position: absolute;
+        left: -120px;
+        top: 4px;
+    }
+
+    .Pos29 {
+        position: absolute;
+        left: 10px;
+        top: 5px;
+    }
+
+
+    .Pos30 {
+        position: absolute;
+        left: 145px;
+        top: 150px;
+    }
+
+    .Pos31 {
+        position: absolute;
+        left: 85px;
+        top: 160px;
+    }
+
+    .Pos32 {
+        position: absolute;
+        left: 20px;
+        top: 635px;
+    }
+
+    .Pos33 {
+        position: absolute;
+        left: 100px;
+        top: 610px;
+    }
+
+    .Pos34 {
+        position: absolute;
+        left: 40px;
+        top: 205px;
+    }
+
+    .Pos35 {
+        position: absolute;
+        left: 145px;
+        top: 200px;
+    }
+
+    .Pos36 {
+        position: absolute;
+        left: 298px;
+        top: 150px;
+    }
+
+    .Pos37 {
+        position: absolute;
+        left: 120px;
+        top: 5px;
+    }
+
+    .Pos38 {
+        position: absolute;
+        left: 340px;
+        top: 150px;
+    }
+
+    .Pos39 {
+        position: absolute;
+        left: 250px;
+        top: 250px;
+    }
+
+
+    .Pos40 {
+        position: absolute;
+        left: 15px;
+        top: 500px;
+    }
+
+    .Pos41 {
+        position: absolute;
+        left: 30px;
+        top: 5px;
+    }
+
+    .Pos42 {
+        position: absolute;
+        left: 80px;
+        top: 5px;
+    }
+
+    .Pos43 {
+        position: absolute;
+        left: 65px;
+        top: 5px;
+    }
+
+    .Pos44 {
+        position: absolute;
+        left: 360px;
+        top: 40px;
+    }
+
+    .Pos45 {
+        position: absolute;
+        left: 25px;
+        top: 10px;
+    }
+
+    .Pos46 {
+        position: absolute;
+        left: 155px;
+        top: 10px;
+    }
+
+    .Pos47 {
+        position: absolute;
+        left: 305px;
+        top: 10px;
+    }
+
+    .Pos48 {
+        position: absolute;
+        left: 440px;
+        top: 10px;
+    }
+
+    .Pos49 {
+        position: absolute;
+        left: 590px;
+        top: 10px;
+    }
+
+    .Pos50 {
+        position: absolute;
+        left: 740px;
+        top: 10px;
+    }
+
+    .Pos51 {
+        position: absolute;
+        left: 10px;
+        top: 115px;
+    }
+
+    .Pos52 {
+        position: absolute;
+        left: 140px;
+        top: 115px;
+    }
+
+    .Pos53 {
+        position: absolute;
+        left: 290px;
+        top: 115px;
+    }
+
+    .Pos54 {
+        position: absolute;
+        left: 440px;
+        top: 115px;
+    }
+
+    .Pos55 {
+        position: absolute;
+        left: 590px;
+        top: 115px;
+    }
+
+    .Pos56 {
+        position: absolute;
+        left: 740px;
+        top: 115px;
+    }
+
+    .Pos57 {
+        position: absolute;
+        left: 60px;
+        top: 550px;
+    }
+
+    .Pos58 {
+        position: absolute;
+        left: 40px;
+        top: 573px;
+    }
+
+    .Pos59 {
+        position: absolute;
+        left: 55px;
+        top: 595px;
+    }
+
+    .Pos60 {
+        position: absolute;
+        left: 60px;
+        top: 660px;
+    }
+
+    .Pos61 {
+        position: absolute;
+        left: 40px;
+        top: 685px;
+    }
+
+    .Pos62 {
+        position: absolute;
+        left: 55px;
+        top: 710px;
+    }
+
+    .Pos63 {
+        position: absolute;
+        left: 5px;
+        top: 30px;
+    }
+
+    .Pos64 {
+        position: absolute;
+        left: 5px;
+        top: 55px;
+    }
+
+    .Pos65 {
+        position: absolute;
+        left: 5px;
+        top: 80px;
+    }
+
+    .Pos66 {
+        position: absolute;
+        left: 145px;
+        top: 30px;
+    }
+
+    .Pos67 {
+        position: absolute;
+        left: 145px;
+        top: 55px;
+    }
+
+    .Pos68 {
+        position: absolute;
+        left: 145px;
+        top: 80px;
+    }
+
+    .Pos69 {
+        position: absolute;
+        left: 290px;
+        top: 30px;
+    }
+
+    .Pos70 {
+        position: absolute;
+        left: 290px;
+        top: 55px;
+    }
+
+    .Pos71 {
+        position: absolute;
+        left: 290px;
+        top: 80px;
+    }
+
+    .Pos72 {
+        position: absolute;
+        left: 435px;
+        top: 30px;
+    }
+
+    .Pos73 {
+        position: absolute;
+        left: 435px;
+        top: 55px;
+    }
+
+    .Pos74 {
+        position: absolute;
+        left: 435px;
+        top: 80px;
+    }
+
+    .Pos75 {
+        position: absolute;
+        left: 585px;
+        top: 30px;
+    }
+
+    .Pos76 {
+        position: absolute;
+        left: 585px;
+        top: 55px;
+    }
+
+    .Pos77 {
+        position: absolute;
+        left: 585px;
+        top: 80px;
+    }
+
+    .Pos78 {
+        position: absolute;
+        left: 730px;
+        top: 30px;
+    }
+
+    .Pos79 {
+        position: absolute;
+        left: 730px;
+        top: 55px;
+    }
+
+    .Pos80 {
+        position: absolute;
+        left: 730px;
+        top: 80px;
+    }
+
+    .Pos81 {
+        position: absolute;
+        left: 5px;
+        top: 195px;
+    }
+
+    .Pos82 {
+        position: absolute;
+        left: 5px;
+        top: 145px;
+    }
+
+    .Pos83 {
+        position: absolute;
+        left: 5px;
+        top: 170px;
+    }
+
+    .Pos84 {
+        position: absolute;
+        left: 145px;
+        top: 195px;
+    }
+
+    .Pos85 {
+        position: absolute;
+        left: 145px;
+        top: 145px;
+    }
+
+    .Pos86 {
+        position: absolute;
+        left: 145px;
+        top: 170px;
+    }
+
+    .Pos87 {
+        position: absolute;
+        left: 290px;
+        top: 195px;
+    }
+
+    .Pos88 {
+        position: absolute;
+        left: 290px;
+        top: 145px;
+    }
+
+    .Pos89 {
+        position: absolute;
+        left: 290px;
+        top: 170px;
+    }
+
+    .Pos90 {
+        position: absolute;
+        left: 435px;
+        top: 195px;
+    }
+
+    .Pos91 {
+        position: absolute;
+        left: 435px;
+        top: 145px;
+    }
+
+    .Pos92 {
+        position: absolute;
+        left: 435px;
+        top: 170px;
+    }
+
+    .Pos93 {
+        position: absolute;
+        left: 585px;
+        top: 195px;
+    }
+
+    .Pos94 {
+        position: absolute;
+        left: 585px;
+        top: 145px;
+    }
+
+    .Pos95 {
+        position: absolute;
+        left: 585px;
+        top: 170px;
+    }
+
+    .Pos96 {
+        position: absolute;
+        left: 730px;
+        top: 195px;
+    }
+
+    .Pos97 {
+        position: absolute;
+        left: 730px;
+        top: 145px;
+    }
+
+    .Pos98 {
+        position: absolute;
+        left: 730px;
+        top: 170px;
+    }
+
+    .Pos99 {
+        position: absolute;
+        left: 350px;
+        top: 150px;
+    }
+
+    .divp {
+        position: fixed;
+    }
+
+    .fieldset1 {
+        display: block;
+        margin-left: 2px;
+        margin-right: 2px;
+        padding-bottom: 0.625em;
+        padding-left: 6.75em;
+        padding-right: 6.75em;
+        border: 2px groove;
+        border-color: #ffffff;
+        width: 20px;
+        height: 35px;
+        position: absolute;
+        top: 150px;
+        left: 142px;
+        font-size-adjust: initial;
+    }
+
+    .Post1 {
+        position: absolute;
+        left: 208px;
+        top: -15px;
+    }
+
+    .Post2 {
+        position: absolute;
+        left: 270px;
+        top: -20px;
+    }
+
+    .Post3 {
+        position: absolute;
+        left: 575px;
+        top: -15px;
+    }
+
+    .Post4 {
+        position: absolute;
+        left: 630px;
+        top: -20px;
+    }
+
+    .Post5 {
+        position: absolute;
+        left: 894px;
+        top: -15px;
+    }
+
+    .Post6 {
+        position: absolute;
+        left: 950px;
+        top: -20px;
+    }
+
+    .Divpo {
+        position: absolute;
+        top: 28px;
+    }
+
+    .Divpos {
+        position: absolute;
+        left: 10px;
+        top: 35px;
+    }
+
+    .Color {
+        color: #36C197;
+    }
+
+    .ui-datepicker-trigger {
+        position: absolute;
+        top: 194px;
+        width: 38px;
+        left: 508px;
+    }
+</style>
+
+<style>
+        /*div {
+        background:red;
+    }*/
+
+        label {
+            color: #38c197;
+        }
+</style>
+
+<div class="Divpos">
+    <h4> <b class="Color Title">Carga/Descarga Cobros Desde Disp. Movil</b></h4>
+</div>
+<br>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container form-horizontal panel panel-default" style="margin-top: 100px;">
+
+        <br />
+
+        @*<div class="row">
+
+            <label class="col-md-2  control-label">Opcion</label>
+
+            <div class="col-md-3" style="margin-left:-15px;">
+
+                <input type="text" class="form-control" name="nombre" style="width: 80%;" />
+                
+            </div>
+
+            <div class="col-md-7"></div>
+
+        </div>*@
+
+        <div class="row">
+
+            <label class="col-md-2  control-label">Opción</label>
+
+            <div class="col-md-7" style="margin-left:-15px;">
+
+                @*<input type="text" class="form-control" name="nombre" style="width: 80%;" />*@
+
+                <div class="panel panel-default">
+                    @Html.RadioButtonFor(model => model.Opcion, 1, htmlAttributes: new { @checked = "checked", @id = "OrigenCuenta" })
+                    @Html.Label("Desde Dispositivo para el Servidor", htmlAttributes: new { @class = " control-label Color" })
+
+                    @Html.RadioButtonFor(model => model.Opcion, 0, htmlAttributes: new { @id = "FormaPagos" })
+                    @Html.Label("Desde el Servidor para el Dispositivo", htmlAttributes: new { @class = " control-label Color" })
+                </div>
+            </div>
+
+            <div class="col-md-3"></div>
+
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <label class="col-md-2  control-label">Fecha</label>
+
+            <div class="col-md-3" style="margin-left:-15px;">
+
+                @*<input type="text" class="form-control" name="nombre" style="width: 80%;" />*@
+
+                @Html.EditorFor(model => model.Fecha, new { @htmlAttributes = new { @class = "form-control inline sizedoc", @style = "width: 80%;", @Placeholder = "dd/MM/yyyy", @Onkeyup = "this.value=formateafecha(this.value)" } })
+
+            </div>
+
+            <div class="col-md-7"></div>
+
+        </div>
+       
+        <br />
+
+        <div class="row">
+
+            <label class="col-md-2  control-label" style="text-indent: -5px;">Nombre del Dispositivo</label>
+
+            <div class="col-md-3" style="margin-left:-15px;">
+
+                @*<input type="text" class="form-control" name="nombre" style="width: 80%;" />*@
+
+                @Html.EditorFor(model => model.CodigoDisp, new { @htmlAttributes = new { @class = "form-control inline sizedoc", @style = "width: 80%;" } })
+
+            </div>
+
+            <div class="col-md-1" style="margin-left: -70px;">
+
+                <input type="button" name="Registrar" value="..." style="background-color:#36C197;color:white;font-weight:bold" class="waves-effect waves-light btn">
+
+            </div>
+
+            <div class="col-md-6" style="margin-left:-48px;">
+
+                @*<input type="text" class="form-control" name="nombre" style="width: 80%;" />*@
+
+                @Html.EditorFor(model => model.NombreDisp, new { @htmlAttributes = new { @class = "form-control inline sizedoc", @style = "width: 80%; max-width: 69%;" } })
+
+            </div>
+
+
+            @*<div class="col-md-3"></div>*@
+
+        </div>
+
+        <br />
+
+        <div class="row">
+
+            <div class="col-md-2">
+
+            </div>
+
+            <div class="col-md-1">
+
+                <input type="button" name="Grabar" value="Grabar" style="background-color:#36C197;color:white;font-weight:bold;margin-left: -14px;width: 85px;" class="waves-effect waves-light btn">
+
+            </div>
+            
+            <div class="col-md-1">
+
+                @*<input type="button" name="Cancelar" value="Cancelar" style="background-color:#36C197;color:white;font-weight:bold;width: 85px;margin-left: -14px;" class="waves-effect waves-light btn">*@
+
+                <input type="submit" name="Cancelar" value="Cancelar" onclick="location.href='@Url.Action("CargaDescargaCobrosDesdeDispMovil", "PrestamosComp")'" style="background-color:#36C197;color:white;font-weight:bold;width: 85px;margin-left: -14px;" class="waves-effect waves-light btn">
+
+            </div>
+
+            <div class="col-md-1">
+
+                @*<input type="button" name="Salir" value="Salir" style="background-color:#36C197;color:white;font-weight:bold;width: 85px;margin-left: -14px;" class="waves-effect waves-light btn">*@
+
+                <input type="submit" name="Salir" value="Salir" onclick="location.href='@Url.Action("PRSC_Index", "PrestamosComp")'" style="background-color:#36C197;color:white;font-weight:bold;width: 85px;margin-left: -14px;" class="waves-effect waves-light btn">
+
+            </div>
+
+            <div class="col-md-6"></div>
+
+        </div>
+
+        <br />
+
+    </div>
+
+   
+        }
+
+        @section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+            <script src="~/Scripts/DateValidator.js"></script>
+            <link rel="stylesheet" type="text/css" href="~/Content/Styl10.css" />
+            <link rel="stylesheet" type="text/css" href="~/Content/Styl5.css" />
+            <link type="text/css" href="~/Content/jquery-ui.theme.css" rel="Stylesheet" />
+            <link type="text/css" href="~/Content/jquery-ui.structure.min.css" rel="Stylesheet" />
+            <script type="text/javascript" src="~/Scripts/jquery-ui.js"></script>
+            <script type="text/javascript" src="~/Scripts/jquery-ui.min.js"></script>
+            <Scripts src="~/Scripts/jquery.unobtrusive-ajax.min.js"></Scripts>
+            <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+            <script src="~/Scripts/jquery-ui-1.8.24.min.js"></script>
+        }
+
+
+<script>
+        $(function ($) {
+            $.datepicker.regional['es'] = {
+                closeText: 'Cerrar',
+                prevText: '<Ant',
+                nextText: 'Sig>',
+                currentText: 'Hoy',
+                monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+                monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+                dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+                dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+                dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+                weekHeader: 'Sm',
+                dateFormat: 'dd/mm/yy',
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+            $.datepicker.setDefaults($.datepicker.regional['es']);
+        });
+</script>
